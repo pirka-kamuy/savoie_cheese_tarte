@@ -22,11 +22,7 @@
     color: var(--color-black);
   }
   
-  .u-padding {
-    padding: 0 90px;
-    max-width: 1260px;
-  }
-  
+  /* スマホ用の左右の余白（PC の余白は .l-main__inner の --gutter で指定済み） */
   @media (width < 768px) {
     .u-padding {
       padding: 0 8vw;

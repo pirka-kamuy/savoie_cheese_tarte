@@ -48,8 +48,7 @@
   }
   
   .l-main__inner {
-    padding: 0 90px;
-    max-width: 1260px;
+    padding: 0 var(--gutter);
   }
   
   @media (width < 768px) {
@@ -210,6 +209,32 @@
     }
     .l-footer .l-footer__inner:before {
       padding-top: 93%;
+    }
+  }
+
+  /* フッター（PC）：上のグレーの斜めを低く・全体を短くし、ロゴとリンクを下端に寄せる。
+     左右は --gutter の線にそろえる */
+  @media (width >= 768px) {
+    .l-footer .l-footer__inner:before {
+      padding-top: 34%;
+    }
+
+    .l-footer .l-footer__triangle {
+      height: 11vw;
+    }
+
+    .l-footer__main {
+      bottom: 36px;
+    }
+
+    .l-footer__mainBox {
+      bottom: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .l-footer__linkBox {
+      right: var(--gutter);
+      padding-right: 0;
     }
   }
 }

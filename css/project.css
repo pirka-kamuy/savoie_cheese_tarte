@@ -1716,7 +1716,9 @@
      --------------------------------------------------------------------------
      各ブロックは写真・文字・帯の位置を vw（画面幅比例）で組んでいるため、
      個別に小さくすると位置関係が崩れる。そこでブロックを丸ごと zoom で
-     --content-scale 倍にし、中央に置く（背景色や斜めの面は全幅のまま）。
+     --content-scale 倍にする（背景色や斜めの面は全幅のまま）。
+     ブロックの表示幅は「画面幅 − 左右の余白(--gutter)」にして、
+     どのセクションも中身の左右の端が同じ線にそろうようにしている。
      ========================================================================== */
   @media (width >= 768px) {
     .p-material,
@@ -1725,13 +1727,63 @@
     .p-passion > .l-main__inner {
       zoom: var(--content-scale);
       box-sizing: border-box;
-      width: 100vw; /* zoom 後は 100vw × 倍率 の幅で表示される */
+      /* zoom 後の表示幅が「画面幅 − 左右の余白」になるよう、倍率で割り戻す */
+      width: calc((100vw - 2 * var(--gutter)) / var(--content-scale));
       max-width: none;
       margin-inline: auto;
+      padding-inline: 0;
     }
 
-    .p-passion > .l-main__inner {
-      padding-inline: 90px;
+    .p-material__inner {
+      max-width: none;
+      padding-inline: 0;
+    }
+
+    /* ESSENCE：ムースのグループは右寄せ、タルト生地のグループは左寄せ（ジグザグ） */
+    .p-material__cheese {
+      margin-left: auto;
+    }
+
+    .p-material__tart {
+      width: 80vw;
+      margin-right: auto;
+    }
+
+    /* PRICE：2商品は中央にまとめる（表示上の間隔 約260px @1440px幅） */
+    .p-price__contentInner {
+      justify-content: center;
+      gap: 22.6vw;
+    }
+
+    .p-price__contentItem {
+      margin-left: 0;
+    }
+
+    /* PHILOSOPHY / DESIGN：文字は左右の線にそろえ、
+       「写真＋見出し」のセットごと左右にずらしてジグザグを大きく（セット内の位置関係は元のまま） */
+    .p-passion__design {
+      left: 0;
+    }
+
+    .p-passion__philosophyList,
+    .p-passion__designList {
+      width: 57.5vw;
+    }
+
+    .p-passion__philosophyList > li,
+    .p-passion__designList > li {
+      width: 50vw;
+    }
+
+    .p-passion__philosophyList > li:nth-child(even),
+    .p-passion__designList > li:nth-child(odd) {
+      margin-left: auto;
+    }
+
+    /* 写真が入れ物（43.75vw）より大きい 45vw 指定になっていた誤差を修正 */
+    .p-passion__itemMain img,
+    .p-passion__itemMain2 img {
+      width: 100%;
     }
 
     /* PRICE：中身は背景の上に重ねたまま中央へ。セクションと背景の高さも同じ倍率に */
