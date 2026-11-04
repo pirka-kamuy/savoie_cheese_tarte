@@ -35,7 +35,7 @@
 
     // 画像の clip-path 表示
     { selector: '._scrollSlideImgUp', className: 'is-active' },
-    { selector: '._scrollSlideImgUpSec, ._scrollSlideImgLeftSec, ._scrollSlideImgRightSec', className: 'is-active', delay: 500 },
+    { selector: '._scrollSlideImgUpSec, ._scrollSlideImgLeftSec', className: 'is-active', delay: 500 },
     { selector: '._scrollSlideImgLeft, ._scrollSlideImgRight', className: 'is-active', delay: 300 },
 
     // 縦書き文字・見出しの演出

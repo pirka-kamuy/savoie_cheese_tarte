@@ -244,14 +244,15 @@
     clip-path: inset(0 -20% 0 0);
   }
   
-  ._scrollSlideImgRightSec {
-    clip-path: inset(0 -20% 0 100%);
-    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
-    transition-delay: 0s;
-  }
-  
-  ._scrollSlideImgRightSec.is-active {
-    clip-path: inset(0 -20% 0 0);
+  /* SHOPS の黄色い重ね画像：スマホでは右から左に表示（PC は左から右） */
+  @media (width < 768px) {
+    .p-shop__imgBox2._scrollSlideImgLeftSec {
+      clip-path: inset(0 -20% 0 100%);
+    }
+
+    .p-shop__imgBox2._scrollSlideImgLeftSec.is-active {
+      clip-path: inset(0 -20% 0 0);
+    }
   }
   ._scrollSlideImgUp {
     clip-path: inset(100% 0 -20% 0);
@@ -457,8 +458,9 @@
     }
   
     ._scrollSlideImgUp, ._scrollSlideImgUpSec, ._scrollSlideImgLeft, ._scrollSlideImgLeftSec,
-    ._scrollSlideImgRight, ._scrollSlideImgRightSec,
-    ._lordSlideImgDown, ._lordSlideImgUp, ._lordSlideImgUpSec, ._lordSlideImgLeft {
+    ._scrollSlideImgRight,
+    ._lordSlideImgDown, ._lordSlideImgUp, ._lordSlideImgUpSec, ._lordSlideImgLeft,
+    .p-shop__imgBox2._scrollSlideImgLeftSec {
       clip-path: none;
     }
   

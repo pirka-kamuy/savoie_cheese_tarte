@@ -191,7 +191,7 @@
         <div class="p-material__inner l-main__inner">
           <div class="p-material__cheese">
             <div class="p-material__cheeseContainer">
-              <img class="_scrollSlideImgUp" src="images/cream_cheese.webp" width="716" height="543" alt="ボウルに入ったクリームチーズ" loading="lazy">
+              <img class="_scrollSlideImgUp" src="images/cream_cheese.webp" width="716" height="543" alt="ボウルに入ったクリームチーズ">
               <div aria-hidden="true">
                 <span class="p-material__cheeseTitle">
                   <span class="u-textDown u-downAnime">
@@ -219,7 +219,7 @@
           </div>
           <div class="p-material__tart">
             <div class="p-material__tartContainer">
-              <img class="_scrollSlideImgUpSec" src="images/tart_base.webp" width="1000" height="717" alt="網の上で冷ましているタルト生地" loading="lazy">
+              <img class="_scrollSlideImgUpSec" src="images/tart_base.webp" width="1000" height="717" alt="網の上で冷ましているタルト生地">
               <div aria-hidden="true">
                 <div class="p-material__tartText">
                   <p class="p-material__text">
@@ -391,7 +391,7 @@
                   </span>
                 </h4>
                 <div class="p-passion__itemMain itemLeft2">
-                  <img class="_scrollSlideImgLeft" src="images/material.webp" width="1000" height="667" alt="チーズタルトの原料" loading="lazy">
+                  <img class="_scrollSlideImgLeft" src="images/material.webp" width="1000" height="667" alt="チーズタルトの原料">
                 </div>
               </li>
               <li class="p-passion__item2">
@@ -402,7 +402,7 @@
                   </span>
                 </h4>
                 <div class="p-passion__itemMain itemLeft1">
-                  <img class="_scrollSlideImgRight" src="images/process.webp" width="1000" height="563" alt="焼き上げ前に並べられたタルト" loading="lazy">
+                  <img class="_scrollSlideImgRight" src="images/process.webp" width="1000" height="563" alt="焼き上げ前に並べられたタルト">
                 </div>
               </li>
               <li class="p-passion__item3">
@@ -413,7 +413,7 @@
                   </span>
                 </h4>
                 <div class="p-passion__itemMain itemLeft2">
-                  <img class="_scrollSlideImgLeft" src="images/finish.webp" width="1000" height="506" alt="焼き上がったばかりのチーズタルト" loading="lazy">
+                  <img class="_scrollSlideImgLeft" src="images/finish.webp" width="1000" height="506" alt="焼き上がったばかりのチーズタルト">
                 </div>
               </li>
             </ul>
@@ -442,7 +442,7 @@
                   </span>
                 </h4>
                 <div class="p-passion__itemMain2 itemLeft1">
-                  <img class="_scrollSlideImgRight" src="images/logo/logo.webp" width="1400" height="481" alt="SAVOIEのロゴマーク" loading="lazy">
+                  <img class="_scrollSlideImgRight" src="images/logo/logo.webp" width="1400" height="481" alt="SAVOIEのロゴマーク">
                 </div>
               </li>
               <li class="p-passion__item3">
@@ -453,7 +453,7 @@
                   </span>
                 </h4>
                 <div class="p-passion__itemMain2 itemLeft2">
-                  <img class="_scrollSlideImgLeft" src="images/workshop.webp" width="1000" height="667" alt="オーブンからタルトを取り出す様子" loading="lazy">
+                  <img class="_scrollSlideImgLeft" src="images/workshop.webp" width="1000" height="667" alt="オーブンからタルトを取り出す様子">
                 </div>
               </li>
             </ul>
@@ -468,22 +468,20 @@
         <svg class="p-shop__triangle2" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true">
           <polygon points="0,0 750,900 700,900 0,900"></polygon>
         </svg>
-        <!-- PC用（loading="lazy" なので非表示側の画像は読み込まれない） -->
-        <div class="p-shop__pc">
+        <!-- PC/SP の画像は <picture> で出し分け（必要な方だけ読み込まれる） -->
+        <div>
           <div class="p-shop__imgBox">
-            <img src="images/pc/shop.webp" width="1920" height="1173" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
+            <picture>
+              <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
+              <img src="images/pc/shop.webp" width="1920" height="1173" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
+            </picture>
           </div>
+          <!-- clip-path で隠してから見せる画像は lazy にしない（隠れている間は読み込みが始まらず、表示が遅れるため） -->
           <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
-            <img class="p-shop__yellowImg" src="images/pc/shop_yellow.webp" width="1920" height="1173" alt="" loading="lazy">
-          </div>
-        </div>
-        <!-- SP用 -->
-        <div class="p-shop__sp">
-          <div class="p-shop__spImgBox">
-            <img src="images/sp/shop.webp" width="542" height="664" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
-          </div>
-          <div class="p-shop__spImgBox2 _scrollSlideImgRightSec">
-            <img class="p-shop__spYellowImg" src="images/sp/shop_yellow.webp" width="1170" height="1434" alt="" loading="lazy">
+            <picture>
+              <source media="(width < 768px)" srcset="images/sp/shop_yellow-750w.webp 750w, images/sp/shop_yellow.webp 1170w" sizes="100vw" width="1170" height="1434">
+              <img class="p-shop__yellowImg" src="images/pc/shop_yellow.webp" width="1920" height="1173" alt="">
+            </picture>
           </div>
         </div>
         <div class="p-shop__title">

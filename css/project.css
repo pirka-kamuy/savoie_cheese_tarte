@@ -1407,9 +1407,6 @@
   .p-shop__yellowImg {
     clip-path: polygon(0% 3%, 0% 101%, 102% 73%, 100% 19%);
   }
-  .p-shop__sp {
-    display: none;
-  }
   .p-shop__triangle2 {
     display: none;
   }
@@ -1436,29 +1433,7 @@
   }
   
   @media (width < 768px) {
-    .p-shop__pc {
-      display: none;
-    }
-    .p-shop__sp {
-      display: block;
-    }
-    .p-shop__spImgBox {
-      position: relative;
-    }
-    .p-shop__spImgBox2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .p-shop__spImgBox img, .p-shop__spYellowImg {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .p-shop__spImgBox img {
-      clip-path: polygon(0% 12%, 0% 86%, 100% 100%, 100% 0%);
-    }
-    .p-shop__spYellowImg {
+    .p-shop__imgBox img, .p-shop__yellowImg {
       clip-path: polygon(0% 12%, 0% 86%, 100% 100%, 100% 0%);
     }
     .p-shop__triangle {
@@ -1732,8 +1707,7 @@
   }
   
   /* 黄色の重ね画像（loading="lazy"）：幅を明示しないと読み込み前に幅0になり、いつまでも読み込まれない */
-  .p-shop__imgBox2,
-  .p-shop__spImgBox2 {
+  .p-shop__imgBox2 {
     width: 100%;
   }
 }
