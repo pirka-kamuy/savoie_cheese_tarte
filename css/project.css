@@ -147,11 +147,11 @@
     letter-spacing: 0.08em;
   }
   .p-memory__container h2 {
-    font-size: max(0.75rem, 2.5vw);
+    font-size: clamp(1.25rem, 1.875vw, 1.6875rem);
   }
   .p-memory__container {
     margin: 4.86111vw 0;
-    font-size: max(0.75rem, 1.80556vw);
+    font-size: clamp(1rem, 1.354vw, 1.25rem);
   }
   .p-memory__sound {
     margin-top: 6vw;
@@ -159,7 +159,7 @@
   .p-memory__body {
     margin-top: 5vw;
     text-align: justify;
-    font-size: max(0.75rem, 1.38889vw);
+    font-size: 1rem;
     line-height: 2;
   }
   
@@ -359,7 +359,7 @@
     right: 40px;
     white-space: nowrap;
     pointer-events: none;
-    font-size: max(0.75rem, 1.5vw);
+    font-size: 1rem;
     transform: translateX(-10%);
     transition-duration: 1s;
     opacity: 0;
@@ -516,12 +516,12 @@
   }
   .p-material__cheese h2 {
     top: 6vw;
-    font-size: max(0.75rem, 1.888vw);
+    font-size: clamp(1rem, 1.416vw, 1.25rem);
     left: 19.44444vw;
   }
   .p-material__tart h2 {
     top: 0;
-    font-size: max(0.75rem, 1.888vw);
+    font-size: clamp(1rem, 1.416vw, 1.25rem);
     right: 20.333333vw;
   }
   .p-material__cheeseContainer, .p-material__tartContainer {
@@ -545,7 +545,7 @@
     position: absolute;
     text-align: justify;
     line-height: 1.666666667;
-    font-size: max(0.75rem, 1.26vw);
+    font-size: 0.9375rem;
     width: 55.793651%;
   }
   .p-material__cheeseDescription {
@@ -573,7 +573,7 @@
     font-weight: 400;
   }
   .p-material__cheeseTitle, .p-material__tartTitle {
-    font-size: max(0.75rem, 14.222vw);
+    font-size: min(14.222vw, 12.7998rem);
     letter-spacing: 0.06em;
   }
   .p-material__cheeseTitle, .p-material__cheeseText, .p-material__tartTitle, .p-material__tartText {
@@ -588,7 +588,7 @@
   }
   .p-material__cheeseText {
     right: 2.3333vw;
-    font-size: max(0.75rem, 2.1111vw);
+    font-size: clamp(1.0625rem, 1.583vw, 1.4375rem);
   }
   .p-material__tartTitle {
     top: 25%;
@@ -597,7 +597,7 @@
   .p-material__tartText {
     top: 25%;
     left: -1.444vw;
-    font-size: max(0.75rem, 2.1111vw);
+    font-size: clamp(1.0625rem, 1.583vw, 1.4375rem);
   }
   .p-material__cheeseContainer img {
     position: absolute;
@@ -762,7 +762,7 @@
     padding-top: 14vw;
   }
   .p-price__title {
-    font-size: max(0.75rem, 7.33333vw);
+    font-size: clamp(3.1875rem, 5.867vw, 5.25rem);
     text-align: right;
     padding: 0 90px;
     font-family: var(--font-en);
@@ -810,19 +810,19 @@
   }
   .p-price__name .p-price__slide {
     padding: 1.4vw 3vw;
-    font-size: max(0.75rem, 1.6vw);
+    font-size: clamp(1rem, 1.2vw, 1.0625rem);
   }
   .p-price__amount .p-price__slide {
     padding: 2vw 4vw;
-    font-size: max(0.75rem, 2.8vw);
+    font-size: clamp(1.4375rem, 2.1vw, 1.875rem);
   }
   .p-price__tax {
-    font-size: max(0.75rem, 1.5vw);
+    font-size: 1rem;
     padding-left: 10px;
   }
   .p-price__box3 {
     text-align: left;
-    font-size: max(0.75rem, 1.2vw);
+    font-size: 0.9375rem;
     padding: 0 90px;
     max-width: 1260px;
     margin: 0 auto;
@@ -918,7 +918,7 @@
   .p-eat__inner header p {
     letter-spacing: 0.08em;
     line-height: 1.78;
-    font-size: max(0.75rem, 2vw);
+    font-size: clamp(1rem, 1.5vw, 1.375rem);
     letter-spacing: 0.08em;
     line-height: 1.78;
   }
@@ -958,7 +958,7 @@
     content: counter(steps);
     text-align: center;
     line-height: 4.5vw;
-    font-size: max(0.75rem, 1.8vw);
+    font-size: clamp(1rem, 1.35vw, 1.1875rem);
   }
   .p-eat__stepBox span {
     position: relative;
@@ -966,7 +966,7 @@
     display: block;
     color: var(--color-white);
     letter-spacing: 0.08em;
-    font-size: max(0.75rem, 4vw);
+    font-size: clamp(2rem, 3vw, 2.6875rem);
     font-family: var(--font-en);
   }
   .p-eat__stepBox img {
@@ -975,11 +975,11 @@
   }
   .p-eat__stepBox p {
     margin-top: 30px;
-    font-size: max(0.75rem, 1.1vw);
+    font-size: 0.8125rem;
   }
   .p-eat__stepBox h3 {
     margin-bottom: 25px;
-    font-size: max(0.75rem, 1.8vw);
+    font-size: clamp(1rem, 1.35vw, 1.1875rem);
   }
   .p-eat__step ul li:nth-child(2) {
     margin-top: 4.16667vw;
@@ -992,7 +992,7 @@
   }
   .p-eat__stepText {
     clear: both;
-    font-size: max(0.75rem, 1vw);
+    font-size: 0.8125rem;
     position: absolute;
     top: 0;
     left: 50%;
@@ -1128,7 +1128,7 @@
     position: relative;
     z-index: 10;
     display: block;
-    font-size: max(0.75rem, 3.33333vw);
+    font-size: clamp(1.6875rem, 2.5vw, 2.25rem);
   }
   .p-passion__text2 {
     margin-top: -1.1em;
@@ -1168,7 +1168,7 @@
   }
   .p-passion__itemTitle1, .p-passion__itemTitle2, .p-passion__itemTitle3 {
     padding: 2.77778vw 3.88889vw;
-    font-size: max(0.75rem, 1.66667vw);
+    font-size: clamp(1rem, 1.25vw, 1.125rem);
   }
   .p-passion__itemMain, .p-passion__itemMain2 {
     width: 43.75vw;
@@ -1205,7 +1205,7 @@
     line-height: 1.111111111;
     transform: translateZ(0);
     backface-visibility: hidden;
-    font-size: max(0.75rem, 8.75vw);
+    font-size: clamp(3.75rem, 7vw, 6.3125rem);
     margin-left: 40px;
     font-family: var(--font-en);
   }
@@ -1216,7 +1216,7 @@
     position: absolute;
     top: 60%;
     left: 55%;
-    font-size: max(0.75rem, 1.66667vw);
+    font-size: clamp(1rem, 1.25vw, 1.125rem);
     margin: -47% 0 0 -25%;
     padding-top: 1.6em;
     text-align: left;
@@ -1381,7 +1381,7 @@
     text-align: center;
     letter-spacing: 0.08em;
     line-height: 1;
-    font-size: max(0.75rem, 5.55556vw);
+    font-size: clamp(2.375rem, 4.444vw, 4rem);
     font-family: var(--font-en);
   }
   .p-shop__text header h2 a {
@@ -1414,7 +1414,7 @@
   .p-shop__title h2 .p-shop__icon {
     position: relative;
     display: inline-block;
-    font-size: max(0.75rem, 4.22222vw);
+    font-size: clamp(1.8125rem, 3.378vw, 3.0625rem);
   }
   
   .p-shop__icon {
@@ -1471,7 +1471,7 @@
     letter-spacing: 0.08em;
   }
   .p-news__title h2 {
-    font-size: max(0.75rem, 3.47222vw);
+    font-size: clamp(1.75rem, 2.604vw, 2.3125rem);
     font-family: var(--font-en);
   }
   .p-news__btnBox {
@@ -1480,7 +1480,7 @@
   .p-news__btnBox a {
     background-color: var(--color-accent);
     padding: 1.9vw 4.777vw;
-    font-size: max(0.75rem, 1.25vw);
+    font-size: 0.9375rem;
     font-family: var(--font-en);
     cursor: pointer;
   }
@@ -1517,10 +1517,10 @@
     padding-left: 10px;
   }
   .p-news__itemBox h3 {
-    font-size: max(0.75rem, 1.333vw);
+    font-size: 1rem;
   }
   .p-news__itemBox p {
-    font-size: max(0.75rem, 0.97222vw);
+    font-size: 0.8125rem;
     margin-top: 10px;
   }
   
@@ -1576,12 +1576,12 @@
   }
   .p-contact__title h2 {
     letter-spacing: 0.08em;
-    font-size: max(0.75rem, 5vw);
+    font-size: clamp(2.1875rem, 4vw, 3.625rem);
     margin-bottom: 20px;
     font-family: var(--font-en);
   }
   .p-contact__title p {
-    font-size: max(0.75rem, 1.25vw);
+    font-size: 0.9375rem;
   }
   .p-contact__list li {
     float: left;
@@ -1594,7 +1594,7 @@
     display: block;
     background-color: var(--color-accent);
     margin-right: 4px;
-    font-size: max(0.75rem, 1.333vw);
+    font-size: 1rem;
     cursor: pointer;
   }
   .p-contact__list li a:hover {
@@ -1614,7 +1614,7 @@
     width: 57%;
     margin: 0 auto;
     margin-top: 5.75em;
-    font-size: max(0.75rem, 1.11111vw);
+    font-size: 0.875rem;
   }
   .p-contact__table dt {
     float: left;
