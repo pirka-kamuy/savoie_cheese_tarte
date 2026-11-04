@@ -15,7 +15,7 @@
   ._scrollSlideSaku,
   ._scrollSlideFuwa {
     opacity: 0;
-    transition: 2s;
+    transition: 1.2s;
     transform: translate(0, 2rem);
   }
   ._scrollBothSlideDown {
@@ -26,13 +26,13 @@
   
   ._scrollBothSlideDownSec {
     opacity: 0;
-    transition: 2s;
+    transition: 1.2s;
     transform: translateY(-20%);
   }
   
   ._scrollBothSlideDownThr {
     opacity: 0;
-    transition: 4s;
+    transition: 1.6s;
     transform: translateY(-20%);
   }
   ._isActiveBothSlideUp {
@@ -51,6 +51,20 @@
   }
   
   .js-timeLag {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HOW TO EAT：カードを1枚ずつ、下からふわっと着地させる（出だし速く・最後ゆっくり） */
+  ._scrollStepUp {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ._isActiveStepUp {
     opacity: 1;
     transform: translateY(0);
   }
@@ -366,7 +380,7 @@
   }
   .js-fadeIn {
     animation-name: fadeInAnime;
-    animation-duration: 3.5s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     opacity: 0;
   }
@@ -437,7 +451,7 @@
   @media (scripting: none) {
     ._scrollBothSlideUp, ._scrollSlide, ._scrollSlideSaku, ._scrollSlideFuwa,
     ._scrollBothSlideDown, ._scrollBothSlideDownSec, ._scrollBothSlideDownThr,
-    ._scrollBothListUp, .p-passion__itemTitle {
+    ._scrollBothListUp, ._scrollStepUp, .p-passion__itemTitle {
       opacity: 1;
       transform: none;
     }

@@ -19,27 +19,28 @@
     // テキストのスライドイン
     { selector: '._scrollBothSlideUp', className: '_isActiveBothSlideUp' },
     { selector: '._scrollBothSlideDown, ._scrollBothSlideDownSec, ._scrollBothSlideDownThr', className: '_isActiveBothSlideDown' },
-    { selector: '._scrollSlideSaku', className: 'js-timeLag', delay: 1000 },
-    { selector: '._scrollSlideFuwa', className: 'js-timeLag', delay: 1300 },
-    { selector: '._scrollSlide', className: 'js-timeLag', delay: 1500 },
+    { selector: '._scrollSlideSaku', className: 'js-timeLag', delay: 500 },
+    { selector: '._scrollSlideFuwa', className: 'js-timeLag', delay: 800 },
+    { selector: '._scrollSlide', className: 'js-timeLag', delay: 1100 },
     { selector: '._scrollBothListUp', className: 'js-timeLag', stagger: 50 },
+    { selector: '._scrollStepUp', className: '_isActiveStepUp', stagger: 250 }, // HOW TO EAT：0.25秒ずつ順番に
 
     // 背景色の帯（黒・黄色）
     { selector: '._scrollSlideLeft', className: 'js-price' },
     { selector: '._scrollPrice', className: 'js-price2' },
     { selector: '._scrollSlideYellow', className: 'js-passionTitle' },
-    { selector: '._scrollSlideLeftYellow', className: 'js-passion', delay: 1000 },
+    { selector: '._scrollSlideLeftYellow', className: 'js-passion', delay: 300 },
     { selector: '._scrollSlideUpYellow', className: 'js-material', delay: 800 },
     { selector: '._scrollYellow', className: 'js-material2', delay: 800 },
 
     // 画像の clip-path 表示
     { selector: '._scrollSlideImgUp', className: 'is-active' },
     { selector: '._scrollSlideImgUpSec, ._scrollSlideImgLeftSec, ._scrollSlideImgRightSec', className: 'is-active', delay: 500 },
-    { selector: '._scrollSlideImgLeft, ._scrollSlideImgRight', className: 'is-active', delay: 1000 },
+    { selector: '._scrollSlideImgLeft, ._scrollSlideImgRight', className: 'is-active', delay: 300 },
 
     // 縦書き文字・見出しの演出
     { selector: '.u-downAnime', className: 'js-textSlideDown', childSelector: '.u-blocking', childClassName: 'js-textSlide', delay: 1000 },
-    { selector: '.u-textLeft', className: 'slideAnimeLeft', childSelector: '.u-textLeftAnime', childClassName: 'slideAnimeRight', delay: 1000 },
+    { selector: '.u-textLeft', className: 'slideAnimeLeft', childSelector: '.u-textLeftAnime', childClassName: 'slideAnimeRight', delay: 300 },
     { selector: '.p-passion__comment', className: 'js-headerActive' },
 
     // 価格
@@ -85,9 +86,19 @@
       return;
     }
 
+    // stagger（順番に表示）用：設定ごとに「次の要素を表示してよい時刻」を覚えておく。
+    // 同時に画面に入っても、スクロールで少しずつ入っても、前の要素から必ず stagger ミリ秒あけて表示する。
+    const nextStartAt = new Map();
+    const staggerDelay = (config) => {
+      if (!config.stagger) return 0;
+      const now = performance.now();
+      const start = Math.max(now, nextStartAt.get(config) ?? 0);
+      nextStartAt.set(config, start + config.stagger);
+      return start - now;
+    };
+
     // IntersectionObserver：スクロールのたびに全要素の位置を計算しないので軽い
     const observer = new IntersectionObserver((entries) => {
-      let staggerIndex = 0;
       for (const entry of entries) {
         // 画面内に入った、またはページ内リンクで一気に通り過ぎた（画面より上にある）要素を対象にする
         const passed = entry.boundingClientRect.top < 0;
@@ -95,10 +106,13 @@
 
         observer.unobserve(entry.target);
         for (const config of configsByElement.get(entry.target)) {
-          const extra = config.stagger ? staggerIndex++ * config.stagger : 0;
-          activate(entry.target, config, extra);
+          activate(entry.target, config, staggerDelay(config));
         }
       }
+    }, {
+      // 画面の下端ちょうどではなく、下から15%ほど入ったところで開始する
+      // （画面の一番下で動いて見逃す、ということを防ぐ）
+      rootMargin: '0px 0px -15% 0px',
     });
 
     configsByElement.forEach((_, el) => observer.observe(el));
