@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Layout（l-）: ヘッダー・メイン・フッターなどページの大枠
+   ========================================================================== */
+
+@layer layout {
+  .l-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+  }
+  .l-header__inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .l-header__wrapper {
+    position: relative;
+    height: 100%;
+  }
+  .l-header__box {
+    position: absolute;
+    top: 3.55556vw;
+    left: 4.55556vw;
+    animation: l-header-fadeIn 1s 1s both;
+  }
+  .l-header__box img {
+    width: 12vw;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: all;
+    position: relative;
+    display: block;
+    transition: 1s;
+  }
+  .l-header__box img:hover {
+    opacity: 0.5;
+    transition: 1s;
+  }
+  
+  .l-header:before {
+    display: block;
+    padding-top: 93.75%;
+    content: "";
+  }
+  
+  .l-main__inner {
+    padding: 0 90px;
+    max-width: 1260px;
+  }
+  
+  @media (width < 768px) {
+    .l-main__inner {
+      padding: 0px;
+    }
+  }
+  .l-footer {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--color-bg-gray);
+  }
+  .l-footer__inner {
+    position: relative;
+    width: 100%;
+  }
+  .l-footer__innerBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .l-footer__backGround {
+    background-image: url("../images/pc/footer_bg.webp");
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: 100% auto;
+  }
+  .l-footer__main {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+  .l-footer__mainBox {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 50px;
+    bottom: 18vw;
+  }
+  .l-footer__logoImg {
+    max-width: 100%;
+  }
+  .l-footer__logoImg img {
+    width: 10vw;
+    height: auto;
+    object-fit: cover;
+  }
+  .l-footer__linkBox {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    padding: 0 3.333333333em 0 14.666666667em;
+  }
+  .l-footer__list {
+    margin-top: 4.362050164%;
+  }
+  .l-footer__text {
+    position: absolute;
+    right: 6.166667em;
+    bottom: 0;
+    height: 3.333333333em;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 3.333333333em;
+    font-size: max(0.75rem, 0.83333vw);
+  }
+  .l-footer__link a {
+    color: var(--color-white);
+    font-size: max(0.75rem, 1vw);
+    margin-left: 1.9vw;
+    text-decoration: none;
+  }
+  .l-footer__link a {
+    margin-left: 20px;
+  }
+  .l-footer__link a:first-child {
+    margin-left: 0;
+  }
+  .l-footer__link a:hover {
+    opacity: 0.5;
+  }
+  .l-footer__text {
+    color: var(--color-white);
+  }
+  .l-footer__list li {
+    display: inline-block;
+    width: 1.99999vw;
+    height: 20px;
+  }
+  .l-footer__list li a {
+    color: var(--color-white);
+    font-size: max(0.75rem, 2.999999vw);
+    cursor: pointer;
+  }
+  .l-footer__list li a:hover {
+    opacity: 0.8;
+  }
+  .l-footer__item {
+    padding-left: 2vw;
+  }
+  
+  .l-footer .l-footer__triangle {
+    fill: var(--color-bg-gray);
+  }
+  
+  .l-footer .l-footer__triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .l-footer .l-footer__inner:before {
+    display: block;
+    padding-top: 47.760416667%;
+    content: "";
+  }
+  
+  @media (width < 768px) {
+    .l-footer__backGround {
+      background-image: url("../images/sp/footer_bg.webp");
+    }
+    .l-footer__mainBox {
+      padding: 0 6vw;
+    }
+    .l-footer__logoImg img {
+      width: 20vw;
+    }
+    .l-footer__main {
+      bottom: -14vw;
+    }
+    .l-footer__link, .l-footer__text {
+      display: none;
+    }
+    .l-footer__linkBox {
+      bottom: 6vw;
+      padding: 0 1.333333em 0 10.666667em;
+    }
+    .l-footer__list {
+      display: flex;
+    }
+    .l-footer__list li {
+      width: 7.99999vw;
+    }
+    .l-footer__list li a {
+      font-size: max(0.75rem, 7.999999vw);
+    }
+    .l-footer .l-footer__inner:before {
+      padding-top: 93%;
+    }
+  }
+}

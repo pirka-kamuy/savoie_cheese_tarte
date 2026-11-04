@@ -1,0 +1,117 @@
+/* ==========================================================================
+   カスケードレイヤーの順番を宣言
+   後に書いたレイヤーほど優先される。詳細度の競争や !important に頼らず、
+   「どのファイルが勝つか」を構造で決められる。
+   ========================================================================== */
+@layer foundation, layout, project, utility, animation;
+
+/* ==========================================================================
+   Foundation: デザイントークン・リセット・要素の基本スタイル
+   ========================================================================== */
+@layer foundation {
+  /* ---------- デザイントークン（色・フォントは必ず変数から使う） ---------- */
+  :root {
+    --color-accent: #ffd700; /* ブランドのイエロー（旧 gold） */
+    --color-black: #000;
+    --color-white: #fff;
+    --color-bg-gray: #f0f0f0;
+    --color-gray: #808080;
+    --color-gray-dark: #333;
+    --color-focus: #005fcc;
+
+    --font-base: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
+    --font-en: "courier", sans-serif;
+  }
+
+  /* ---------- リセット（旧 YUI reset と同じ挙動を必要な分だけ） ---------- */
+  html {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+  pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  fieldset, img {
+    border: 0;
+  }
+
+  address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  small {
+    font-size: inherit;
+  }
+
+  /* ---------- 要素の基本スタイル ---------- */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* width/height 属性で縦横比を予約しつつ、CSS で幅を変えても歪まないようにする */
+  img {
+    height: auto;
+  }
+
+  /* <picture> を箱として扱わず、中の <img> に直接スタイルを当てられるようにする */
+  picture {
+    display: contents;
+  }
+
+  button {
+    color: inherit;
+  }
+
+  /* キーボード操作時のフォーカスを、どの背景色の上でも見えるように */
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--color-white);
+  }
+
+  /* ---------- Sass 版から移行した html / body のスタイル ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  body {
+    font-family: var(--font-base);
+  }
+
+  /* ---------- 動きを減らす設定（OS の「視差効果を減らす」など）を尊重 ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+  }
+}

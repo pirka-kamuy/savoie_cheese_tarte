@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8" />
-    <title>サヴォワ チーズタルト | SAVOIE CHEESE TART</title>
-    <link href="./css/reset.css" rel="stylesheet">
-    <link href="./css/app.css" rel="stylesheet">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script type='text/javascript' src="JavaScriput/index.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サヴォワ チーズタルト | SAVOIE CHEESE TART</title>
+  <meta name="description" content="北海道生まれの焼きたてチーズタルト専門店「SAVOIE CHEESE TART」。サクッ、フワッ。記憶に残るひとくちを。">
+  <meta name="theme-color" content="#ffd700">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="サヴォワ チーズタルト | SAVOIE CHEESE TART">
+  <meta property="og:description" content="北海道生まれの焼きたてチーズタルト専門店「SAVOIE CHEESE TART」。">
+  <meta property="og:image" content="images/pc/main01.webp">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/utility.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="p-superWrapper">
+  <a class="u-skipLink" href="#main">本文へスキップ</a>
+
+  <!-- アイコン用SVGスプライト（Font Awesomeの代替） -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></symbol>
+    <symbol id="i-caret" viewBox="0 0 24 24"><path d="M5 9h14l-7 8z" fill="currentColor"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14 21 3M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+    <symbol id="i-angle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15.5 7.5H14a2 2 0 0 0-2 2V21M9 12.5h6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11 16h5L9 4z"/><path d="M4 20l6.6-7M20 4l-6.4 7"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+  </svg>
+
+  <div class="p-superWrapper" id="top">
     <div class="p-hero">
       <div class="p-hero__container">
         <header class="l-header">
           <div class="l-header__inner">
             <div class="l-header__wrapper">
-              <div class="l-header__box">
-                <img class="l-header__logoImg" src="./images/logo/logo_black.jpg">
-              </div>
+              <h1 class="l-header__box">
+                <a href="./">
+                  <img class="l-header__logoImg" src="images/logo/logo_black.webp" width="480" height="704" alt="SAVOIE CHEESE TART">
+                </a>
+              </h1>
             </div>
           </div>
         </header>
-        <section>
-          <div class="p-main">
-            <!--PC用ここから-->
-            <div class="p-main__imgPc">
-              <div id="top">
-                <div class="p-main__imgBox1 _lordSlideImgDown">
-                  <img class="p-main__img1" src="./images/pc/main01.jpg">
-                </div>
-                <div class="p-main__imgYellowBox _lordSlideImgUp">
-                  <img class="p-main__imgYellow1" src="./images/pc/main01_yellow.jpg">
-                </div>
+
+        <div class="p-main">
+          <!-- PC/SPの画像は <picture> で出し分け（不要な方はダウンロードされない） -->
+          <div class="p-main__imgs">
+            <div>
+              <div class="p-main__imgBox1 _lordSlideImgDown">
+                <picture>
+                  <source media="(width < 768px)" srcset="images/sp/main01-750w.webp 750w, images/sp/main01.webp 1086w" sizes="100vw" width="1086" height="2532">
+                  <img class="p-main__img1" src="images/pc/main01.webp" width="889" height="667" alt="積み重ねた焼きたてのチーズタルト" fetchpriority="high">
+                </picture>
               </div>
-              <div id="savoie">
-                <div class="p-main__imgBox2 _lordSlideImgLeft">
-                  <img class="p-main__img2" src="./images/pc/main02.jpg">
-                </div>
-                <div class="p-main__imgBox2 _lordSlideImgUpSec">
-                  <img class="p-main__imgYellow2" src="./images/pc/main02_yellow.jpg">
-                </div>
+              <div class="p-main__imgYellowBox _lordSlideImgUp">
+                <picture>
+                  <source media="(width < 768px)" srcset="images/sp/main01_yellow-750w.webp 750w, images/sp/main01_yellow.webp 1086w" sizes="100vw" width="1086" height="2532">
+                  <img class="p-main__imgYellow1" src="images/pc/main01_yellow.webp" width="1124" height="843" alt="">
+                </picture>
               </div>
             </div>
-            <!--PC用ここまで-->
-            <!--SP用ここから-->
-            <div class="p-main__imgSp">
-              <div>
-                <div class="p-main__imgBox1 _lordSlideImgDown">
-                  <img class="p-main__img1" src="./images/sp/main01_sp.jpg">
-                </div>
-                <div class="p-main__imgYellowBox _lordSlideImgUp">
-                  <img class="p-main__imgYellow1" src="./images/sp/main01_sp_yellow.jpg">
-                </div>
+            <div id="savoie">
+              <div class="p-main__imgBox2 _lordSlideImgLeft">
+                <picture>
+                  <source media="(width < 768px)" srcset="images/sp/main02-750w.webp 750w, images/sp/main02.webp 1170w" sizes="100vw" width="1170" height="2340">
+                  <img class="p-main__img2" src="images/pc/main02.webp" width="1920" height="1560" alt="並べられた2つのチーズタルト" fetchpriority="high">
+                </picture>
               </div>
-              <div>
-                <div class="p-main__imgBox2 _lordSlideImgLeft">
-                  <img class="p-main__img2" src="./images/sp/main02_sp.jpg">
-                </div>
-                <div class="p-main__imgBox2 _lordSlideImgUpSec">
-                  <img class="p-main__imgYellow2" src="./images/sp/main02_sp_yellow.jpg">
-                </div>
+              <div class="p-main__imgBox2 _lordSlideImgUpSec">
+                <picture>
+                  <source media="(width < 768px)" srcset="images/sp/main02_yellow-750w.webp 750w, images/sp/main02_yellow.webp 1170w" sizes="100vw" width="1170" height="2340">
+                  <img class="p-main__imgYellow2" src="images/pc/main02_yellow.webp" width="1920" height="1560" alt="">
+                </picture>
               </div>
             </div>
-            <!--SP用ここまで-->
           </div>
-        </section id="savoie">
+        </div>
+
         <section class="p-memory">
           <div class="p-memory__inner">
             <div class="p-memory__description">
@@ -91,238 +105,123 @@
         </section>
       </div>
     </div>
-    <section class="p-menu">
+
+    <div class="p-menu">
       <div class="p-menu__inner">
         <div class="p-menu__nav">
           <div class="p-menu__btn">
-            <a>
+            <button class="p-menu__toggle" type="button" aria-expanded="false" aria-controls="global-menu">
               <span class="p-menu__navLabel">
                 <span class="icon p-menu__navIcon">
-                  <i class="fas fa-globe u-earth"></i>
-                  <p>JP</p>
-                  <i class="fas fa-caret-down"></i>
+                  <svg class="c-icon c-icon--globe u-earth" aria-hidden="true"><use href="#i-globe"/></svg>
+                  <span class="p-menu__navLang">JP</span>
+                  <svg class="c-icon c-icon--caret" aria-hidden="true"><use href="#i-caret"/></svg>
                 </span>
                 <span class="icon p-menu__navMark"></span>
               </span>
-            </a>
+              <span class="u-visuallyHidden">メニューと言語選択</span>
+            </button>
           </div>
-          <dvi class="p-menu__langGroup">
+          <div class="p-menu__langGroup" id="global-menu">
             <div class="p-menu__langBox"></div>
             <div class="p-menu__wrapper">
-              <div class="p-menu__pageNav">
-                <ul class="">
-                  <li>
-                    <a class="_linkSlideLeft" href="#top">
-                      <span class=""></span>
-                      <span class="">TOP</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#savoie">
-                      <span class=""></span>
-                      <span class="">SAVOIE CHEESE TART</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#essence">
-                      <span class=""></span>
-                      <span class="">ESSENCE</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#price">
-                      <span class=""></span>
-                      <span class="">PRICE</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#eat">
-                      <span class=""></span>
-                      <span class="">HOW TO EAT</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#passion">
-                      <span class=""></span>
-                      <span class="">PHILOSOPHY</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#shop">
-                      <span class=""></span>
-                      <span class="">SHOPS</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="_linkSlideLeft" href="#news">
-                      <span class=""></span>
-                      <span class="">NEWS</span>
-                    </a>
-                  </li>
-                  <li>
-                      <a class="_linkSlideLeft" href="#cintact">
-                        <span class=""></span>
-                      <span class="">CONTACT - FAQ</span>
-                      </a>
-                  </li>
+              <nav class="p-menu__pageNav" aria-label="ページ内メニュー">
+                <ul>
+                  <li><a class="_linkSlideLeft" href="#top">TOP</a></li>
+                  <li><a class="_linkSlideLeft" href="#savoie">SAVOIE CHEESE TART</a></li>
+                  <li><a class="_linkSlideLeft" href="#essence">ESSENCE</a></li>
+                  <li><a class="_linkSlideLeft" href="#price">PRICE</a></li>
+                  <li><a class="_linkSlideLeft" href="#eat">HOW TO EAT</a></li>
+                  <li><a class="_linkSlideLeft" href="#passion">PHILOSOPHY</a></li>
+                  <li><a class="_linkSlideLeft" href="#shop">SHOPS</a></li>
+                  <li><a class="_linkSlideLeft" href="#news">NEWS</a></li>
+                  <li><a class="_linkSlideLeft" href="#contact">CONTACT - FAQ</a></li>
                 </ul>
-                <div class="p-menu__pageBorder">
-                  <a></a>
-                </div>
-              </div>
-              <ul class="p-menu__langChoice">
+                <div class="p-menu__pageBorder" aria-hidden="true"><span></span></div>
+              </nav>
+              <ul class="p-menu__langChoice" aria-label="言語">
                 <li>
-                  <a class="is-jp _linkSlideLeft">
-                    <i class="fas fa-globe"></i>
-                    <span class="icon u-icon__global"></span>
+                  <a class="is-jp _linkSlideLeft" href="./" hreflang="ja" aria-current="true">
+                    <svg class="c-icon c-icon--globe" aria-hidden="true"><use href="#i-globe"/></svg>
                     JAPANESE
                   </a>
                 </li>
                 <li>
-                  <a class="is-en _linkSlideLeft">
-                    <i class="fas fa-globe"></i>
-                    <span class="icon u-icon__external"></span>
+                  <a class="is-en _linkSlideLeft" href="#" hreflang="en" lang="en">
+                    <svg class="c-icon c-icon--globe" aria-hidden="true"><use href="#i-globe"/></svg>
                     ENGLISH
                   </a>
                 </li>
               </ul>
-              <ul class="p-menu__country">
-                <li>
-                  <a class="_linkSlideLeft">한국<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="_linkSlideLeft">中国大陸<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="_linkSlideLeft">台灣<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="_linkSlideLeft">ประเทศไทย<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="_linkSlideLeft">PHILIPPINES<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="_linkSlideLeft">UNITED STATES<span class="icon"></span>
-                    <i class="fas fa-external-link-alt u-icon__white"></i>
-                  </a>
-                </li>
+              <ul class="p-menu__country" aria-label="海外店舗サイト">
+                <li><a class="_linkSlideLeft" href="#" lang="ko">한국<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+                <li><a class="_linkSlideLeft" href="#" lang="zh-CN">中国大陸<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+                <li><a class="_linkSlideLeft" href="#" lang="zh-TW">台灣<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+                <li><a class="_linkSlideLeft" href="#" lang="th">ประเทศไทย<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+                <li><a class="_linkSlideLeft" href="#" lang="en">PHILIPPINES<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+                <li><a class="_linkSlideLeft" href="#" lang="en">UNITED STATES<svg class="c-icon c-icon--external u-icon__white" aria-hidden="true"><use href="#i-external"/></svg></a></li>
               </ul>
             </div>
-          </dvi>
+          </div>
         </div>
         <div class="p-menu__shopLink">
-            <a>SHOPS</a>
+          <a href="#shop">SHOPS</a>
         </div>
         <div class="p-menu__shopLink p-menu__online">
-            <a>Online Shop</a>
+          <a href="#">Online Shop</a>
         </div>
       </div>
-      <nav class="p-menu__category">
+      <nav class="p-menu__category" aria-label="セクション">
         <ul class="p-menu__links">
-          <li>
-            <a class="c-pageLink" href="#top">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">TOP</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#savoie">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">SAVOIE CHEESE TART</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#essence">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">ESSENCE</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#price">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">PRICE</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#eat">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">HOW TO EAT</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#passion">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">PHILOSOPHY</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#shop">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">SHOPS</span>
-            </a>
-          </li>
-          <li>
-            <a class="c-pageLink" href="#news">
-              <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">NEWS</span>
-            </a>
-          </li>
-          <li>
-              <a class="c-pageLink" href="#cintact">
-                <span class="p-menu__linkDot"></span>
-              <span class="p-menu__linkLabel">CONTACT - FAQ</span>
-              </a>
-          </li>
+          <li><a class="c-pageLink" href="#top"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">TOP</span></a></li>
+          <li><a class="c-pageLink" href="#savoie"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">SAVOIE CHEESE TART</span></a></li>
+          <li><a class="c-pageLink" href="#essence"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">ESSENCE</span></a></li>
+          <li><a class="c-pageLink" href="#price"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">PRICE</span></a></li>
+          <li><a class="c-pageLink" href="#eat"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">HOW TO EAT</span></a></li>
+          <li><a class="c-pageLink" href="#passion"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">PHILOSOPHY</span></a></li>
+          <li><a class="c-pageLink" href="#shop"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">SHOPS</span></a></li>
+          <li><a class="c-pageLink" href="#news"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">NEWS</span></a></li>
+          <li><a class="c-pageLink" href="#contact"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">CONTACT - FAQ</span></a></li>
         </ul>
       </nav>
-    </section>
-    <main class="l-main">
+    </div>
+
+    <main class="l-main" id="main">
       <section class="p-material" id="essence">
         <div class="p-material__inner l-main__inner">
           <div class="p-material__cheese">
             <div class="p-material__cheeseContainer">
-              <img class="_scrollSlideImgUp" src="./images/CreamCheese.jpg">
-              <div>
+              <img class="_scrollSlideImgUp" src="images/cream_cheese.webp" width="716" height="543" alt="ボウルに入ったクリームチーズ" loading="lazy">
+              <div aria-hidden="true">
                 <span class="p-material__cheeseTitle">
-                    <span class="u-textDown u-downAnime">
-                        <span class="u-textDown__inner u-blocking">CHEESE</span>
-                    </span>
+                  <span class="u-textDown u-downAnime">
+                    <span class="u-textDown__inner u-blocking">CHEESE</span>
+                  </span>
                 </span>
               </div>
-              <div>
-                  <span class="p-material__cheeseText">
-                      <span class="u-textDown u-downAnime">
-                          <span class="u-textDown__inner u-blocking">ESSENCE</span><br>
-                          <span class="u-textDown__inner u-blocking">OF</span><br>
-                          <span class="u-textDown__inner u-blocking">SAVOIE CHEESE TART</span>
-                      </span>
+              <div aria-hidden="true">
+                <span class="p-material__cheeseText">
+                  <span class="u-textDown u-downAnime">
+                    <span class="u-textDown__inner u-blocking">ESSENCE</span><br>
+                    <span class="u-textDown__inner u-blocking">OF</span><br>
+                    <span class="u-textDown__inner u-blocking">SAVOIE CHEESE TART</span>
                   </span>
+                </span>
               </div>
               <h2>
-                  <span class="u-downAnime">フワフワ食感のムース</span>
-                  <div class="_scrollSlideUpYellow"></div>
+                <span class="u-downAnime">フワフワ食感のムース</span>
+                <span class="_scrollSlideUpYellow" aria-hidden="true"></span>
               </h2>
               <div class="p-material__cheeseDescription _scrollBothSlideUp">
-                  <p>オリジナルブレンドのクリームチーズを使ったフワフワ食感のムース。クリーミーな味わいと爽やかな酸味、ほのかな塩味が口いっぱいに広がります。</p>
+                <p>オリジナルブレンドのクリームチーズを使ったフワフワ食感のムース。クリーミーな味わいと爽やかな酸味、ほのかな塩味が口いっぱいに広がります。</p>
               </div>
             </div>
           </div>
-          <div class="p-material__tart is-trigged">
+          <div class="p-material__tart">
             <div class="p-material__tartContainer">
-              <img class="_scrollSlideImgUpSec" src="./images/tarte_02.jpg">
-              <div>
-                <span class="p-material__tartText">
+              <img class="_scrollSlideImgUpSec" src="images/tart_base.webp" width="1000" height="717" alt="網の上で冷ましているタルト生地" loading="lazy">
+              <div aria-hidden="true">
+                <div class="p-material__tartText">
                   <p class="p-material__text">
                     <span class="u-textDown u-downAnime">
                       <span class="u-textDown__inner u-blocking">THE</span><br>
@@ -331,9 +230,9 @@
                       <span class="u-textDown__inner u-blocking">SAVOIE CHEESE TART</span>
                     </span>
                   </p>
-                </span>
+                </div>
               </div>
-              <div>
+              <div aria-hidden="true">
                 <span class="p-material__tartTitle">
                   <span class="u-textDown u-downAnime">
                     <span class="u-textDown__inner u-blocking">TART</span>
@@ -341,63 +240,51 @@
                 </span>
               </div>
               <h2>
-                  <span class="u-downAnime">２度焼きのタルト生地</span>
-                  <div class="_scrollYellow"></div>
+                <span class="u-downAnime">２度焼きのタルト生地</span>
+                <span class="_scrollYellow" aria-hidden="true"></span>
               </h2>
               <div class="p-material__tartDescription _scrollBothSlideUp">
-                  <span class="">サクサクの理由は、「2度焼き」だから。オリジナルブレンドの小麦粉でつくるタルト生地は、クッキーの状態で1度焼き、ムースを入れてからもう1度焼き上げています。</span>
+                <p>サクサクの理由は、「2度焼き」だから。オリジナルブレンドの小麦粉でつくるタルト生地は、クッキーの状態で1度焼き、ムースを入れてからもう1度焼き上げています。</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section class="p-price" id="price">
         <div class="p-price__container">
-          <div class="p-price__svg">
-            <svg class="priceSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 1630">
-              <defs>
-                <clipPath id="price-img">
-                  <polygon points="1440,1630 0,1360 0,360 1440,0 "></polygon>
-                </clipPath>
-              </defs>
-              <image clip-path="url(#price-img)" xlink:href="images/pc/BackGround_pc.jpg" x="0" y="0" width="1440" height="1630"></image>
-            </svg>
-          </div>
-          <div class="p-price__svgSp">
-            <svg class="priceSVG_sp" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 2458">
-              <defs>
-                <clipPath id="price-imgSp">
-                  <polygon points="0,274 750,0 750,2458 0,2345 "></polygon>
-                </clipPath>
-              </defs>
-              <image clip-path="url(#price-imgSp)" xlink:href="images/sp/BackGround_sp.jpg" x="0" y="0" width="750" height="2458"></image>
-            </svg>
+          <!-- 斜めの背景は SVG ではなく CSS の clip-path で切り抜き -->
+          <div class="p-price__bg">
+            <picture>
+              <source media="(width < 768px)" srcset="images/sp/price_bg.webp" width="750" height="2458">
+              <img src="images/pc/price_bg.webp" width="1920" height="2173" alt="" loading="lazy">
+            </picture>
           </div>
           <div class="p-price__inner">
-            <h1 class="p-price__title">PRICE</h1>
+            <h2 class="p-price__title">PRICE</h2>
             <div class="p-price__content">
               <div class="p-price__contentInner">
                 <div class="p-price__contentItem">
-                  <h3>
-                    <p class="js-fadeIn p-price__slide">1 PRICE</p>
-                    <div class="_scrollSlideLeft"></div>
+                  <h3 class="p-price__name">
+                    <span class="fadeIn p-price__slide">1 PIECE</span>
+                    <span class="_scrollSlideLeft" aria-hidden="true"></span>
                   </h3>
-                  <img class="p-price__contentImage" src="./images/peace1.jpg"/>
-                  <h4 class="p-price__text1">
-                    <p class="js-fadeIn p-price__slide">230 yen<span>(tax incl.)</span></p>
-                    <div class="_scrollPrice"></div>
-                  </h4>
+                  <img class="p-price__contentImage" src="images/piece1.webp" width="900" height="882" alt="木のプレートにのせたチーズタルト1個" loading="lazy">
+                  <p class="p-price__amount p-price__text1">
+                    <span class="fadeIn p-price__slide">230 yen<span class="p-price__tax">(tax incl.)</span></span>
+                    <span class="_scrollPrice" aria-hidden="true"></span>
+                  </p>
                 </div>
                 <div class="p-price__contentItem">
-                  <h3>
-                    <p class="js-fadeIn p-price__slide">6 PIECES (in BOX)</p>
-                    <div class="_scrollPrice"></div>
+                  <h3 class="p-price__name">
+                    <span class="fadeIn p-price__slide">6 PIECES (in BOX)</span>
+                    <span class="_scrollPrice" aria-hidden="true"></span>
                   </h3>
-                  <img class="p-price__contentImage" src="./images/peace6.jpg"/>
-                  <h4 class="p-price__text6">
-                    <p class="js-fadeIn p-price__slide">1,326 yen<span>(tax incl.)</span></p>
-                    <div class="_scrollPrice"></div>
-                  </h4>
+                  <img class="p-price__contentImage" src="images/piece6.webp" width="838" height="850" alt="木のボードに並んだチーズタルト" loading="lazy">
+                  <p class="p-price__amount p-price__text6">
+                    <span class="fadeIn p-price__slide">1,326 yen<span class="p-price__tax">(tax incl.)</span></span>
+                    <span class="_scrollPrice" aria-hidden="true"></span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -409,9 +296,11 @@
           </div>
         </div>
       </section>
+
       <section class="p-eat" id="eat">
         <div class="p-eat__inner">
           <header class="_scrollBothSlideUp">
+            <h2 class="u-visuallyHidden">HOW TO EAT</h2>
             <p>SAVOIE CHEESE TARTのチーズタルトは、<br>
               食べ方によってさまざまな表情に変化します。<br>
               4通りのおいしさを食べ比べてみてください。</p>
@@ -420,69 +309,71 @@
             <ul>
               <li class="_scrollBothListUp">
                 <div class="p-eat__stepBox">
-                  <span>FRESH</span>
+                  <span lang="en">FRESH</span>
                   <h3>まずはそのままで</h3>
-                  <img class="p-eat__imgTarte" src="./images/tarte.jpg">
+                  <img class="p-eat__imgTarte" src="images/icon_fresh.webp" width="400" height="400" alt="" loading="lazy">
                   <p class="_scrollBothListUp">焼きたてならではの「サクッ、フワッ」なおいしさをお楽しみください。</p>
                 </div>
               </li>
               <li class="p-eat__stepItem _scrollBothListUp">
                 <div class="p-eat__stepBox">
-                  <span>CHILLED</span>
+                  <span lang="en">CHILLED</span>
                   <h3>冷蔵庫で冷やして</h3>
-                  <img src="./images/refrigerator.jpg">
+                  <img src="images/icon_chilled.webp" width="400" height="400" alt="" loading="lazy">
                   <p class="_scrollBothListUp">冷蔵庫で冷やすと、ずっしりとしたレアチーズケーキのような食感になります。</p>
                 </div>
               </li>
               <li class="p-eat__stepItem _scrollBothListUp">
                 <div class="p-eat__stepBox">
-                  <span>FROZEN</span>
+                  <span lang="en">FROZEN</span>
                   <h3>冷凍庫で凍らせて</h3>
-                  <img src="./images/crystal.jpg">
-                    <p class="_scrollBothListUp">冷凍庫で凍らすことで、チーズアイスのようなひんやりケーキに生まれ変わります。</p>
+                  <img src="images/icon_frozen.webp" width="400" height="392" alt="" loading="lazy">
+                  <p class="_scrollBothListUp">冷凍庫で凍らすことで、チーズアイスのようなひんやりケーキに生まれ変わります。</p>
                 </div>
               </li>
               <li class="p-eat__stepItem _scrollBothListUp">
                 <div class="p-eat__stepBox">
-                  <span>WARM</span>
+                  <span lang="en">WARM</span>
                   <h3>オーブンで温めて</h3>
-                  <img src="./images/oven.jpg">
+                  <img src="images/icon_warm.webp" width="400" height="400" alt="" loading="lazy">
                   <p class="_scrollBothListUp">オーブントースターで少し温めると、焼きたての食感がよみがえります。</p>
                 </div>
               </li>
             </ul>
             <div class="p-eat__stepText _scrollBothSlideUp">
-                <p>すぐにお召し上がりにならない場合は、<br>
-                    冷蔵庫または冷凍庫にて保存し、できるだけお早めにお召し上がりください。</p>
+              <p>すぐにお召し上がりにならない場合は、<br>
+                冷蔵庫または冷凍庫にて保存し、できるだけお早めにお召し上がりください。</p>
             </div>
           </div>
         </div>
       </section>
+
       <section class="p-passion svg" id="passion">
-        <svg class="p-passion__triangle svg_1" viewBox="0 0 1440 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
-          <polygon points="0,0 14440,0 1440,180 "></polygon>
+        <svg class="p-passion__triangle svg_1" viewBox="0 0 1440 180" aria-hidden="true">
+          <polygon points="0,0 1440,0 1440,180"></polygon>
         </svg>
         <div class="l-main__inner u-padding">
-          <heder>
+          <header>
             <h2 class="p-passion__title">
               <span class="p-passion__text1 js-slideLeft">
                 <span class="p-passion__text _scrollBothListUp">私たちは</span>
-                <div class="_scrollSlideYellow"></div>
+                <span class="_scrollSlideYellow" aria-hidden="true"></span>
               </span>
               <i class="p-passion__br"></i>
               <span class="p-passion__text1 p-passion__text2 js-slideLeft">
                 <span class="p-passion__text _scrollBothListUp">チーズタルトに本気です。</span>
-                <div class="_scrollSlideYellow"></div>
+                <span class="_scrollSlideYellow" aria-hidden="true"></span>
               </span>
             </h2>
-          </heder>
+          </header>
           <div class="p-passion__box">
             <div class="p-passion__textBox _scrollBothSlideDown">
               <div class="p-passion__philosophy">
                 <h3>
-                  <span class="_scrollBothSlideDown">Phi</span>
-                  <span class="_scrollBothSlideDownSec">loso</span>
-                  <span class="_scrollBothSlideDownThr">phy</span>
+                  <span class="u-visuallyHidden">Philosophy</span>
+                  <span class="_scrollBothSlideDown" aria-hidden="true">Phi</span>
+                  <span class="_scrollBothSlideDownSec" aria-hidden="true">loso</span>
+                  <span class="_scrollBothSlideDownThr" aria-hidden="true">phy</span>
                 </h3>
                 <p class="p-passion__comment">私たちは、<br>
                   チーズタルトをつくる上で、<br>
@@ -491,118 +382,118 @@
                 </p>
               </div>
             </div>
-            <ul class="p-passion__philosophyList" id="passion">
+            <ul class="p-passion__philosophyList">
               <li class="p-passion__item1">
-                  <h4>
-                      <div class="p-passion__itemTitle1 u-textDown u-textLeft">
-                          <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">原料にこだわる</span>
-                          <div class="_scrollSlideLeftYellow"></div>
-                      </div>
-                  </h4>
-                      <div class="p-passion__itemMain itemLeft2">
-                          <img class="_scrollSlideImgLeft" src="./images/material.jpg">
-                      </div>
-                  </li>
-                  <li class="p-passion__item2">
-                      <h4>
-                          <div class="p-passion__itemTitle2 u-textDown u-textLeft">
-                              <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">手間を惜しまない</span>
-                              <div class="_scrollSlideLeftYellow"></div>
-                          </div>
-                      </h4>
-                      <div class="p-passion__itemMain itemLeft1">
-                          <img class="_scrollSlideImgRight" src="./images/process.jpg">
-                      </div>
-                  </li>
-                  <li class="p-passion__item3">
-                      <h4>
-                          <div class="p-passion__itemTitle3 u-textDown u-textLeft">
-                              <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">フレッシュなタイミングで</span>
-                              <div class="_scrollSlideLeftYellow"></div>
-                          </div>
-                      </h4>
-                      <div class="p-passion__itemMain itemLeft2">
-                          <img class="_scrollSlideImgLeft" src="./images/finish.jpg">
-                      </div>
-                  </li>
+                <h4>
+                  <span class="p-passion__itemTitle1 u-textDown u-textLeft">
+                    <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">原料にこだわる</span>
+                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                  </span>
+                </h4>
+                <div class="p-passion__itemMain itemLeft2">
+                  <img class="_scrollSlideImgLeft" src="images/material.webp" width="1000" height="667" alt="チーズタルトの原料" loading="lazy">
+                </div>
+              </li>
+              <li class="p-passion__item2">
+                <h4>
+                  <span class="p-passion__itemTitle2 u-textDown u-textLeft">
+                    <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">手間を惜しまない</span>
+                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                  </span>
+                </h4>
+                <div class="p-passion__itemMain itemLeft1">
+                  <img class="_scrollSlideImgRight" src="images/process.webp" width="1000" height="563" alt="焼き上げ前に並べられたタルト" loading="lazy">
+                </div>
+              </li>
+              <li class="p-passion__item3">
+                <h4>
+                  <span class="p-passion__itemTitle3 u-textDown u-textLeft">
+                    <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">フレッシュなタイミングで</span>
+                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                  </span>
+                </h4>
+                <div class="p-passion__itemMain itemLeft2">
+                  <img class="_scrollSlideImgLeft" src="images/finish.webp" width="1000" height="506" alt="焼き上がったばかりのチーズタルト" loading="lazy">
+                </div>
+              </li>
             </ul>
           </div>
           <div class="p-passion__box">
             <div class="p-passion__textBox textBox2">
               <div class="p-passion__design">
                 <h3>
-                  <span class="_scrollBothSlideDown">De</span>
-                  <span class="_scrollBothSlideDownSec">sign</span>
+                  <span class="u-visuallyHidden">Design</span>
+                  <span class="_scrollBothSlideDown" aria-hidden="true">De</span>
+                  <span class="_scrollBothSlideDownSec" aria-hidden="true">sign</span>
                 </h3>
                 <p class="p-passion__comment">私たちの<br>
-                    チーズタルトへの想いは、<br>
-                    ロゴや店舗デザインにも<br>
-                    表われています。
+                  チーズタルトへの想いは、<br>
+                  ロゴや店舗デザインにも<br>
+                  表われています。
                 </p>
               </div>
             </div>
             <ul class="p-passion__designList">
               <li class="p-passion__item4">
-                  <h4>
-                      <div class="p-passion__itemTitle2 u-textDown u-textLeft">
-                          <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">ロゴに込めた想い</span>
-                          <div class="_scrollSlideLeftYellow"></div>
-                      </div>
-                  </h4>
-                  <div class="p-passion__itemMain2 itemLeft1">
-                      <img class="_scrollSlideImgRight" src="./images/logo/logo.jpg">
-                  </div>
+                <h4>
+                  <span class="p-passion__itemTitle2 u-textDown u-textLeft">
+                    <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">ロゴに込めた想い</span>
+                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                  </span>
+                </h4>
+                <div class="p-passion__itemMain2 itemLeft1">
+                  <img class="_scrollSlideImgRight" src="images/logo/logo.webp" width="1400" height="481" alt="SAVOIEのロゴマーク" loading="lazy">
+                </div>
               </li>
               <li class="p-passion__item3">
-                  <h4>
-                      <div class="p-passion__itemTitle3 u-textDown u-textLeft">
-                          <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">工房一体型”店舗が生まれた理由</span>
-                          <div class="_scrollSlideLeftYellow"></div>
-                      </div>
-                  </h4>
-                  <div class="p-passion__itemMain2 itemLeft2">
-                      <img class="_scrollSlideImgLeft" src="./images/oven _02.jpg">
-                  </div>
+                <h4>
+                  <span class="p-passion__itemTitle3 u-textDown u-textLeft">
+                    <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">“工房一体型”店舗が生まれた理由</span>
+                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                  </span>
+                </h4>
+                <div class="p-passion__itemMain2 itemLeft2">
+                  <img class="_scrollSlideImgLeft" src="images/workshop.webp" width="1000" height="667" alt="オーブンからタルトを取り出す様子" loading="lazy">
+                </div>
               </li>
             </ul>
           </div>
         </div>
       </section>
+
       <section class="p-shop" id="shop">
-        <svg class="p-shop__triangle" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 320" preserveAspectRatio="none" xml:space="preserve">
-          <polygon points="0,320 1920,0 1920,320 "></polygon>
+        <svg class="p-shop__triangle" viewBox="0 0 1920 320" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="0,320 1920,0 1920,320"></polygon>
         </svg>
-        <svg class="p-shop__triangle2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 900" preserveAspectRatio="none" xml:space="preserve">
-            <polygon points="0,0 750,900 700,900 0,900"></polygon>
+        <svg class="p-shop__triangle2" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="0,0 750,900 700,900 0,900"></polygon>
         </svg>
-        <!-- PC用ここから -->
+        <!-- PC用（loading="lazy" なので非表示側の画像は読み込まれない） -->
         <div class="p-shop__pc">
           <div class="p-shop__imgBox">
-            <img src="images/pc/shop.jpg">
+            <img src="images/pc/shop.webp" width="1920" height="1173" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
           </div>
           <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
-            <img class="p-shop__yellowImg" src="images/pc/shop_yellow.jpg">
+            <img class="p-shop__yellowImg" src="images/pc/shop_yellow.webp" width="1920" height="1173" alt="" loading="lazy">
           </div>
         </div>
-        <!-- PC用ここまで -->
-        <!--SP用ここに書く-->
+        <!-- SP用 -->
         <div class="p-shop__sp">
           <div class="p-shop__spImgBox">
-            <img src="images/sp/shop_sp.jpg">
+            <img src="images/sp/shop.webp" width="542" height="664" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
           </div>
           <div class="p-shop__spImgBox2 _scrollSlideImgRightSec">
-            <img class="p-shop__spYellowImg" src="images/sp/shop_yelllow_sp.jpg">
+            <img class="p-shop__spYellowImg" src="images/sp/shop_yellow.webp" width="1170" height="1434" alt="" loading="lazy">
           </div>
         </div>
-        <!--SP用ここまで-->
         <div class="p-shop__title">
           <div class="p-shop__text">
             <div class="l-main__inner">
               <header>
                 <h2>
-                  <a>SHOPS
+                  <a href="#">SHOPS
                     <span class="p-shop__icon">
-                      <i class="fas fa-angle-right"></i>
+                      <svg class="c-icon" aria-hidden="true"><use href="#i-angle"/></svg>
                     </span>
                   </a>
                 </h2>
@@ -611,112 +502,102 @@
           </div>
         </div>
       </section>
+
       <section class="p-news" id="news">
-        <div class="l-main__inner  u-padding">
+        <div class="l-main__inner u-padding">
           <div class="p-news__title _scrollBothSlideUp">
-              <h3>NEWS</h3>
+            <h2>NEWS</h2>
           </div>
           <div class="p-news__box">
             <ul class="p-news__list">
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/news.jpg">
+                <img src="images/news/new_year.webp" width="400" height="390" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【2022-2023】年末年始の営業時間のお知らせ</h3>
-                  <p>2022.12.27</p>
+                  <p><time datetime="2022-12-27">2022.12.27</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/ChocoDeline.jpg">
+                <img src="images/news/terrine.webp" width="400" height="267" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【新発売】ヘーゼルナッツとブロンドチョコのチーズテリーヌ</h3>
-                  <p>2022.11.21</p>
+                  <p><time datetime="2022-11-21">2022.11.21</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/pc/main02.jpg">
+                <img src="images/news/sweet_potato.webp" width="400" height="325" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【12/1新発売】焼きたてチーズタルト スイートポテト</h3>
-                  <p>2022.10.06</p>
+                  <p><time datetime="2022-10-06">2022.10.06</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/pc/main01.jpg">
+                <img src="images/news/cial_yokohama.webp" width="400" height="300" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【CIAL横浜】クローズのお知らせ</h3>
-                  <p>2022.12.27</p>
+                  <p><time datetime="2022-12-27">2022.12.27</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/newItem.jpg">
+                <img src="images/news/baumkuchen.webp" width="400" height="267" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【コトチカ京都店】「RINGO」の焼きたてカスタードチョコバウムを限定販売！</h3>
-                  <p>2022.11.21</p>
+                  <p><time datetime="2022-11-21">2022.11.21</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="./images/MontBlanc.jpg">
+                <img src="images/news/montblanc.webp" width="400" height="267" alt="" loading="lazy">
                 <div class="p-news__itemBox">
                   <h3>【10/21新発売】やまえ栗のモンブランチーズタルト（10/19追記あり）</h3>
-                  <p>2022.10.06</p>
+                  <p><time datetime="2022-10-06">2022.10.06</time></p>
                 </div>
               </li>
             </ul>
           </div>
           <div class="p-news__btnBox _scrollBothSlideUp">
-            <a>
-              <span>NEWS PAGE</span>
-            </a>
+            <a href="#"><span>NEWS PAGE</span></a>
           </div>
         </div>
       </section>
-      <section class="p-contact" id="cintact">
-        <svg class="p-contact__triangle" version="1.1" viewBox="0 0 1440 140" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" xml:space="preserve">
-          <polygon points="0,140 0,0 1440,0 " fill="#ffffff"></polygon>
+
+      <section class="p-contact" id="contact">
+        <svg class="p-contact__triangle" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="0,140 0,0 1440,0" fill="#ffffff"></polygon>
         </svg>
         <div class="l-main__inner u-padding">
           <div class="p-contact__title _scrollBothSlideUp">
-            <h3>CONTACT - FAQ</h3>
+            <h2>CONTACT - FAQ</h2>
             <p class="_scrollBothSlideUp">ご質問内容に応じて、<br>下記連絡先までお問い合わせください。</p>
           </div>
           <div class="p-contact__box">
             <ul class="p-contact__list">
               <li class="p-contact__item _scrollBothListUp">
-                <a>商品や店舗に関するお問い合わせ
-                  <span>
-                    <i class="fas fa-external-link-alt u-icon__black"></i>
-                  </span>
+                <a href="#">商品や店舗に関するお問い合わせ
+                  <span><svg class="c-icon c-icon--external u-icon__black" aria-hidden="true"><use href="#i-external"/></svg></span>
                 </a>
               </li>
               <li class="p-contact__item _scrollBothListUp">
-                <a>採用に関するお問い合わせ
-                  <span>
-                    <i class="fas fa-external-link-alt u-icon__black"></i>
-                  </span>
+                <a href="#">採用に関するお問い合わせ
+                  <span><svg class="c-icon c-icon--external u-icon__black" aria-hidden="true"><use href="#i-external"/></svg></span>
                 </a>
               </li>
               <li class="p-contact__item _scrollBothListUp">
-                <a>プロモーションに関するお問い合わせ
-                  <span>
-                    <i class="fas fa-external-link-alt u-icon__black"></i>
-                  </span>
+                <a href="#">プロモーションに関するお問い合わせ
+                  <span><svg class="c-icon c-icon--external u-icon__black" aria-hidden="true"><use href="#i-external"/></svg></span>
                 </a>
               </li>
               <li class="p-contact__item _scrollBothListUp">
-                <a>店舗・会社への取材に関するお問い合わせ
-                  <span>
-                    <i class="fas fa-external-link-alt u-icon__black"></i>
-                  </span>
+                <a href="#">店舗・会社への取材に関するお問い合わせ
+                  <span><svg class="c-icon c-icon--external u-icon__black" aria-hidden="true"><use href="#i-external"/></svg></span>
                 </a>
               </li>
               <li class="p-contact__item _scrollBothListUp">
-                <a>日本国内、および海外の出店に関するお問い合わせ
-                  <span>
-                    <i class="fas fa-external-link-alt u-icon__black"></i>
-                  </span>
+                <a href="#">日本国内、および海外の出店に関するお問い合わせ
+                  <span><svg class="c-icon c-icon--external u-icon__black" aria-hidden="true"><use href="#i-external"/></svg></span>
                 </a>
               </li>
               <li class="p-contact__item _scrollBothListUp">
-                <a>FAQ - よくあるご質問(アレルギー・商品情報)</a>
+                <a href="#">FAQ - よくあるご質問(アレルギー・商品情報)</a>
               </li>
             </ul>
           </div>
@@ -727,7 +608,7 @@
               <dt>サポートセンター(本社)</dt>
               <dd>〒333-8888 東京都〇〇0-00-0 〇〇ビル</dd>
               <dt>メールアドレス</dt>
-              <dd>taart@savoie.co.jp</dd>
+              <dd><a href="mailto:taart@savoie.co.jp">taart@savoie.co.jp</a></dd>
               <dt>設立</dt>
               <dd>1999年1月1日 (創業 1998年1月1日)</dd>
               <dt>事業内容</dt>
@@ -739,24 +620,23 @@
         </div>
       </section>
     </main>
+
     <footer class="l-footer">
-      <svg class="l-footer__triangle" viewBox="0 0 1920 480" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" xml:space="preserve">
-          <polygon points="0,480 0,0 1920,0 "></polygon>
+      <svg class="l-footer__triangle" viewBox="0 0 1920 480" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="0,480 0,0 1920,0"></polygon>
       </svg>
       <div class="l-footer__inner">
         <div class="l-footer__innerBox">
           <div class="l-footer__backGround"></div>
-          <div class="l-footer__backGroundSp"></div>
           <div class="l-footer__main">
             <div class="l-footer__mainBox">
               <div class="l-footer__logoImg">
-                <a id="#top">
-                  <img src="./images/logo/logo_white.jpg">
+                <a href="#top">
+                  <img src="images/logo/logo_white.webp" width="480" height="745" alt="SAVOIE CHEESE TART（ページ先頭へ戻る）" loading="lazy">
                 </a>
               </div>
               <div class="l-footer__linkBox">
-                <div class="l-footer__link">
+                <nav class="l-footer__link" aria-label="フッターメニュー">
                   <a href="#savoie">SAVOIE CHEESE TART</a>
                   <a href="#essence">ESSENCE</a>
                   <a href="#price">PRICE</a>
@@ -765,19 +645,19 @@
                   <a href="#shop">SHOPS</a>
                   <a href="#news">NEWS</a>
                   <a href="#contact">CONTACT - FAQ</a>
-                </div>
+                </nav>
                 <ul class="l-footer__list">
                   <li class="l-footer__item">
-                    <a><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Facebook"><svg class="c-icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
                   </li>
                   <li class="l-footer__item">
-                    <a><i class="fab fa-twitter-square"></i></a>
+                    <a href="#" aria-label="X（旧Twitter）"><svg class="c-icon" aria-hidden="true"><use href="#i-x"/></svg></a>
                   </li>
                   <li class="l-footer__item">
-                    <a><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Instagram"><svg class="c-icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
                   </li>
                 </ul>
-                <p class="l-footer__text">Copyright © SAVOIE Inc. All rights reserved.</p>
+                <p class="l-footer__text"><small>Copyright © SAVOIE Inc. All rights reserved.</small></p>
               </div>
             </div>
           </div>

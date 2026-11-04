@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Utility（u-）: 汎用の小さな調整用クラス
+   ========================================================================== */
+
+@layer utility {
+  .u-textDown {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .u-textDown__inner {
+    display: inline-block;
+  }
+  
+  .u-downAnime {
+    opacity: 0;
+  }
+  
+  .u-icon__black {
+    position: absolute;
+    top: 2.5em;
+    right: 2em;
+    color: var(--color-black);
+  }
+  
+  .u-padding {
+    padding: 0 90px;
+    max-width: 1260px;
+  }
+  
+  @media (width < 768px) {
+    .u-padding {
+      padding: 0 8vw;
+    }
+  }
+
+  /* 画面には表示しないが、スクリーンリーダーには読み上げさせる */
+  .u-visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* キーボード操作時だけ現れる「本文へスキップ」リンク */
+  .u-skipLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    padding: 0.75em 1.25em;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transform: translateY(-100%);
+  }
+  
+  .u-skipLink:focus {
+    transform: none;
+  }
+}

@@ -1,0 +1,171 @@
+/**
+ * SAVOIE CHEESE TART - main.js
+ * jQuery を使わない素の JavaScript。
+ * <script defer> で読み込むので HTML の解析を止めず、DOM 構築後に実行される。
+ * （type="module" にしないのは、index.html をダブルクリックで開く file:// でも動かすため）
+ */
+'use strict';
+
+// ブロックで囲み、変数がグローバルに漏れないようにする
+{
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spQuery = window.matchMedia('(width < 768px)');
+
+  /* --------------------------------------------------------------------------
+   * 1. スクロールで画面に入ったらクラスを付けるアニメーション
+   *    「どの要素に・どのクラスを・何ms後に付けるか」を表で管理する。
+   * -------------------------------------------------------------------------- */
+  const SCROLL_ANIMATIONS = [
+    // テキストのスライドイン
+    { selector: '._scrollBothSlideUp', className: '_isActiveBothSlideUp' },
+    { selector: '._scrollBothSlideDown, ._scrollBothSlideDownSec, ._scrollBothSlideDownThr', className: '_isActiveBothSlideDown' },
+    { selector: '._scrollSlideSaku', className: 'js-timeLag', delay: 1000 },
+    { selector: '._scrollSlideFuwa', className: 'js-timeLag', delay: 1300 },
+    { selector: '._scrollSlide', className: 'js-timeLag', delay: 1500 },
+    { selector: '._scrollBothListUp', className: 'js-timeLag', stagger: 50 },
+
+    // 背景色の帯（黒・黄色）
+    { selector: '._scrollSlideLeft', className: 'js-price' },
+    { selector: '._scrollPrice', className: 'js-price2' },
+    { selector: '._scrollSlideYellow', className: 'js-passionTitle' },
+    { selector: '._scrollSlideLeftYellow', className: 'js-passion', delay: 1000 },
+    { selector: '._scrollSlideUpYellow', className: 'js-material', delay: 800 },
+    { selector: '._scrollYellow', className: 'js-material2', delay: 800 },
+
+    // 画像の clip-path 表示
+    { selector: '._scrollSlideImgUp', className: 'is-active' },
+    { selector: '._scrollSlideImgUpSec, ._scrollSlideImgLeftSec, ._scrollSlideImgRightSec', className: 'is-active', delay: 500 },
+    { selector: '._scrollSlideImgLeft, ._scrollSlideImgRight', className: 'is-active', delay: 1000 },
+
+    // 縦書き文字・見出しの演出
+    { selector: '.u-downAnime', className: 'js-textSlideDown', childSelector: '.u-blocking', childClassName: 'js-textSlide', delay: 1000 },
+    { selector: '.u-textLeft', className: 'slideAnimeLeft', childSelector: '.u-textLeftAnime', childClassName: 'slideAnimeRight', delay: 1000 },
+    { selector: '.p-passion__comment', className: 'js-headerActive' },
+
+    // 価格
+    { selector: '.fadeIn', className: 'js-fadeIn' },
+    { selector: '.p-price__slide', className: 'js-priceText' },
+  ];
+
+  /* ファーストビューの画像が表示できる状態になってから、時間差で実行するアニメーション */
+  const LOAD_ANIMATIONS = [
+    { selector: '._lordSlideImgDown, ._lordSlideImgLeft', className: 'is-active', delay: 500 },
+    { selector: '._lordSlideImgUp, ._lordSlideImgUpSec', className: 'is-active', delay: 1000 },
+    { selector: '.p-menu__btn', className: 'js-headerActive', delay: 1500 },
+    { selector: '.p-menu__shopLink', className: 'js-headerActive', delay: 2000 },
+    { selector: '.p-menu__category', className: 'js-pageLink', delay: 2500 },
+  ];
+
+  /** 要素(と子要素)にクラスを付ける。動きを減らす設定のときは待ち時間なし */
+  function activate(el, { className, childSelector, childClassName, delay = 0 }, extraDelay = 0) {
+    const run = () => {
+      el.classList.add(className);
+      if (childSelector) {
+        el.querySelectorAll(childSelector).forEach((child) => child.classList.add(childClassName));
+      }
+    };
+    const wait = prefersReducedMotion ? 0 : delay + extraDelay;
+    if (wait > 0) setTimeout(run, wait);
+    else run();
+  }
+
+  function setupScrollAnimations() {
+    // 要素 → 設定 の対応表（1つの要素が複数の設定に該当してもよい）
+    const configsByElement = new Map();
+    for (const config of SCROLL_ANIMATIONS) {
+      document.querySelectorAll(config.selector).forEach((el) => {
+        if (!configsByElement.has(el)) configsByElement.set(el, []);
+        configsByElement.get(el).push(config);
+      });
+    }
+
+    // 動きを減らす設定なら、スクロールを待たずに最初から全部表示しておく
+    if (prefersReducedMotion) {
+      configsByElement.forEach((configs, el) => configs.forEach((config) => activate(el, config)));
+      return;
+    }
+
+    // IntersectionObserver：スクロールのたびに全要素の位置を計算しないので軽い
+    const observer = new IntersectionObserver((entries) => {
+      let staggerIndex = 0;
+      for (const entry of entries) {
+        // 画面内に入った、またはページ内リンクで一気に通り過ぎた（画面より上にある）要素を対象にする
+        const passed = entry.boundingClientRect.top < 0;
+        if (!entry.isIntersecting && !passed) continue;
+
+        observer.unobserve(entry.target);
+        for (const config of configsByElement.get(entry.target)) {
+          const extra = config.stagger ? staggerIndex++ * config.stagger : 0;
+          activate(entry.target, config, extra);
+        }
+      }
+    });
+
+    configsByElement.forEach((_, el) => observer.observe(el));
+  }
+
+  function setupLoadAnimations() {
+    const run = () => {
+      for (const config of LOAD_ANIMATIONS) {
+        document.querySelectorAll(config.selector).forEach((el) => activate(el, config));
+      }
+    };
+    // ページ全体（下の方の画像まで）の load を待つと表示が遅れるので、
+    // ファーストビューのメイン画像のデコードが終わった時点で開始する
+    const hero = document.querySelector('.p-main__img1');
+    (hero ? hero.decode() : Promise.resolve()).catch(() => {}).then(run);
+  }
+
+  /* --------------------------------------------------------------------------
+   * 2. メニュー（JP ボタン / スマホのハンバーガー）
+   * -------------------------------------------------------------------------- */
+  function setupMenu() {
+    const toggle = document.querySelector('.p-menu__toggle');
+    const menu = document.getElementById(toggle?.getAttribute('aria-controls'));
+    if (!toggle || !menu) return;
+
+    const caret = toggle.querySelector('.c-icon--caret');
+    const navMark = toggle.querySelector('.p-menu__navMark');
+    const shopLinks = document.querySelectorAll('.p-menu__shopLink');
+    const links = menu.querySelectorAll('._linkSlideLeft');
+    let timers = [];
+
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('js-active', open);
+      caret?.classList.toggle('js-revolving', open);
+      navMark?.classList.toggle('js-navBorderAfter', open);
+      navMark?.classList.toggle('js-navBorderBefore', open);
+      navMark?.classList.toggle('js-navBorderNone', open);
+      // スマホではメニューを開いている間 SHOPS ボタンを隠す（画面幅は開閉のたびに判定）
+      shopLinks.forEach((el) => el.classList.toggle('js-toHide', open && spQuery.matches));
+
+      // リンクを上から順に時間差で表示
+      timers.forEach(clearTimeout);
+      timers = [...links].map((link, i) =>
+        setTimeout(() => link.classList.toggle('js-linkSlideLeft', open), prefersReducedMotion ? 0 : i * 50),
+      );
+    };
+
+    const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+
+    toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+    // Esc キーで閉じてボタンにフォーカスを戻す
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen()) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    // ページ内リンクを選んだらメニューを閉じる
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a[href^="#"]')) setOpen(false);
+    });
+  }
+
+  setupScrollAnimations();
+  setupLoadAnimations();
+  setupMenu();
+}
