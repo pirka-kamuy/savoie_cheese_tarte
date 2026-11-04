@@ -21,6 +21,10 @@
 
     --font-base: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
     --font-en: "courier", sans-serif;
+
+    /* PC で各コンテンツブロックを表示する倍率（1 = 元のデザインどおり）。
+       レイアウトが画面幅比例(vw)で作られているため、ブロックごと zoom で縮めている */
+    --content-scale: 0.8;
   }
 
   /* ---------- リセット（旧 YUI reset と同じ挙動を必要な分だけ） ---------- */

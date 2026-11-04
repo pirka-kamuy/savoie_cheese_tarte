@@ -28,7 +28,7 @@
     animation: l-header-fadeIn 1s 1s both;
   }
   .l-header__box img {
-    width: clamp(88px, 8vw, 128px); /* 旧 12vw（1440px幅で173px）→ 約115px。大画面でも128pxまで */
+    width: clamp(72px, 6.4vw, 102px); /* 1440px幅で約92px（元の12vw=173pxから縮小）。大画面でも102pxまで */
     height: 100%;
     object-fit: cover;
     pointer-events: all;
@@ -98,7 +98,7 @@
     max-width: 100%;
   }
   .l-footer__logoImg img {
-    width: clamp(80px, 7vw, 112px); /* 旧 10vw（1440px幅で144px）→ 約100px */
+    width: clamp(64px, 5.6vw, 90px); /* 1440px幅で約80px（元の10vw=144pxから縮小） */
     height: auto;
     object-fit: cover;
   }

@@ -1710,4 +1710,73 @@
   .p-shop__imgBox2 {
     width: 100%;
   }
+
+  /* ==========================================================================
+     PC のサイズ調整：コンテンツを一回り引いた見え方にする
+     --------------------------------------------------------------------------
+     各ブロックは写真・文字・帯の位置を vw（画面幅比例）で組んでいるため、
+     個別に小さくすると位置関係が崩れる。そこでブロックを丸ごと zoom で
+     --content-scale 倍にし、中央に置く（背景色や斜めの面は全幅のまま）。
+     ========================================================================== */
+  @media (width >= 768px) {
+    .p-material,
+    .p-price__inner,
+    .p-eat__inner,
+    .p-passion > .l-main__inner {
+      zoom: var(--content-scale);
+      box-sizing: border-box;
+      width: 100vw; /* zoom 後は 100vw × 倍率 の幅で表示される */
+      max-width: none;
+      margin-inline: auto;
+    }
+
+    .p-passion > .l-main__inner {
+      padding-inline: 90px;
+    }
+
+    /* PRICE：中身は背景の上に重ねたまま中央へ。セクションと背景の高さも同じ倍率に */
+    .p-price__inner {
+      right: 0;
+    }
+
+    .p-price:before {
+      padding-top: calc(91.194444% * var(--content-scale));
+    }
+
+    .p-price__bg img {
+      height: calc(113.17vw * var(--content-scale)); /* 背景画像の縦横比 2173/1920 */
+      object-fit: cover;
+    }
+
+    /* 縮小したブロック内でも本文は小さくしない：倍率で割り戻して、表示サイズを保つ（最低 13px） */
+    .p-material__cheeseDescription,
+    .p-material__tartDescription,
+    .p-price__box3 {
+      font-size: calc(0.9375rem / var(--content-scale)); /* 表示 15px */
+    }
+
+    .p-eat__stepBox p,
+    .p-eat__stepText,
+    .p-price__tax {
+      font-size: calc(0.8125rem / var(--content-scale)); /* 表示 13px */
+    }
+
+    .p-price__name .p-price__slide {
+      font-size: max(calc(0.8125rem / var(--content-scale)), clamp(1rem, 1.2vw, 1.0625rem));
+    }
+
+    .p-passion__textBox p,
+    .p-passion__itemTitle1,
+    .p-passion__itemTitle2,
+    .p-passion__itemTitle3 {
+      font-size: max(calc(0.8125rem / var(--content-scale)), clamp(1rem, 1.25vw, 1.125rem));
+    }
+
+    /* SHOPS：写真は全幅のまま、高さだけ縮める（上下をトリミング） */
+    .p-shop__imgBox img,
+    .p-shop__yellowImg {
+      height: calc(61.1vw * var(--content-scale)); /* 写真の縦横比 1173/1920 */
+      object-fit: cover;
+    }
+  }
 }
