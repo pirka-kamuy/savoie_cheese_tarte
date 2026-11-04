@@ -1780,6 +1780,52 @@
       margin-left: auto;
     }
 
+    /* HOW TO EAT の注意書き：padding 分だけ幅がはみ出し、右の余白の線を越えていたのを修正 */
+    .p-eat__stepText {
+      box-sizing: border-box;
+    }
+
+    /* 右上の SHOPS / ONLINE SHOP：固定表示のまま、右の余白(--gutter)の幅に収める。
+       中身は余白の線より内側にあるので、スクロールしてもボタンの下に隠れない */
+    .p-menu__shopLink,
+    .p-menu__shopLink a {
+      width: var(--gutter);
+      height: 48px;
+    }
+
+    .p-menu__shopLink a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 8px;
+      box-sizing: border-box;
+      font-size: 0.8125rem;
+      line-height: 1.2;
+      white-space: normal; /* ONLINE SHOP は2行に */
+    }
+
+    .p-menu__online {
+      top: 49px;
+    }
+
+    /* JP ボタンは SHOPS の左隣。高さも SHOPS にそろえる */
+    .p-menu__nav {
+      right: calc(var(--gutter) + 1px);
+    }
+
+    .p-menu__toggle {
+      height: 48px;
+      line-height: 48px;
+    }
+
+    .p-menu__navIcon {
+      padding-top: 14px;
+    }
+
+    .p-menu__langGroup {
+      padding-top: 48px;
+    }
+
     /* 写真が入れ物（43.75vw）より大きい 45vw 指定になっていた誤差を修正 */
     .p-passion__itemMain img,
     .p-passion__itemMain2 img {

@@ -402,6 +402,11 @@
   .p-menu__shopLink.js-toHide {
     transform: translateY(-500%);
   }
+
+  /* スマホ：下にスクロールしている間は SHOPS / ONLINE SHOP を上に引っ込める（js/main.js） */
+  .p-menu__shopLink.is-scrollHidden {
+    transform: translateY(-500%);
+  }
   
   .c-icon--caret.js-revolving {
     transform: rotate(180deg);
