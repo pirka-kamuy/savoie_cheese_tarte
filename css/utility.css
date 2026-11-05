@@ -15,10 +15,8 @@
     opacity: 0;
   }
   
+  /* 位置は親（.p-contact__item a > span）で指定するので、ここでは色だけ */
   .u-icon__black {
-    position: absolute;
-    top: 2.5em;
-    right: 2em;
     color: var(--color-black);
   }
   

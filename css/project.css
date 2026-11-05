@@ -278,7 +278,7 @@
   }
   .p-menu__navIcon {
     display: flex;
-    padding-top: 18px;
+    align-items: center;
   }
   .p-menu__navIcon img {
     width: 18px;
@@ -1310,6 +1310,8 @@
     }
     .p-passion__text1 {
       padding: 4.9vw 10vw;
+      white-space: normal; /* 画面幅を超える長さになるので改行を許可 */
+      word-break: keep-all; /* 改行は HTML の <wbr> の位置（文節の区切り）だけにする */
     }
     .p-passion__philosophy h3, .p-passion__design h3 {
       font-size: max(0.75rem, 20.16vw);
@@ -1626,6 +1628,11 @@
     display: table;
     clear: both;
   }
+  /* 別窓アイコンの分だけ右に余白を取り、文字が2行になってもアイコンと重ならないように */
+  .p-contact__list li a:has(> span) {
+    padding-right: 3.5em;
+  }
+
   .p-contact__item a > span {
     position: absolute;
     top: 2.5em;
@@ -1836,10 +1843,6 @@
     .p-menu__toggle {
       height: 48px;
       line-height: 48px;
-    }
-
-    .p-menu__navIcon {
-      padding-top: 14px;
     }
 
     .p-menu__langGroup {
