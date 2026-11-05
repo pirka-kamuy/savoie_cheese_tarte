@@ -179,52 +179,7 @@
     });
   }
 
-  /* --------------------------------------------------------------------------
-   * 3. スマホ：SHOPS / ONLINE SHOP を下スクロール中は隠し、上スクロールで出す
-   *    （右上に固定したボタンが、読んでいる中身の上にかぶさらないように）
-   * -------------------------------------------------------------------------- */
-  function setupShopLinksAutoHide() {
-    const shopLinks = document.querySelectorAll('.p-menu__shopLink');
-    if (!shopLinks.length) return;
-
-    const SHOW_NEAR_TOP = 120; // ページ上部（この位置より上）では常に表示
-    const THRESHOLD = 8;       // 小さな揺れでは切り替えない
-    let lastY = window.scrollY;
-    let ticking = false;
-
-    const setHidden = (hidden) => shopLinks.forEach((el) => el.classList.toggle('is-scrollHidden', hidden));
-
-    const update = () => {
-      ticking = false;
-      const y = window.scrollY;
-      if (!spQuery.matches || y < SHOW_NEAR_TOP) {
-        setHidden(false);
-      } else if (y > lastY + THRESHOLD) {
-        setHidden(true);
-      } else if (y < lastY - THRESHOLD) {
-        setHidden(false);
-      } else {
-        return; // 変化が小さいときは基準位置を更新しない
-      }
-      lastY = y;
-    };
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    }, { passive: true });
-
-    // キーボード操作でボタンにフォーカスが来たら、隠れていても表示する
-    shopLinks.forEach((el) => el.addEventListener('focusin', () => setHidden(false)));
-
-    // PC 幅に切り替わったら必ず表示
-    spQuery.addEventListener('change', update);
-  }
-
   setupScrollAnimations();
   setupLoadAnimations();
   setupMenu();
-  setupShopLinksAutoHide();
 }

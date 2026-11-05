@@ -289,7 +289,7 @@
     margin-left: 10px;
   }
   .p-menu__shopLink {
-    position: fixed;
+    position: absolute; /* 画面に固定しない（ページ上部に置き、スクロールで流れる） */
     right: 0;
     z-index: 0;
     width: 160px;
@@ -820,6 +820,27 @@
     font-size: 1rem;
     padding-left: 10px;
   }
+  /* PRICE の下の「オンラインショップを見る」ボタン */
+  .p-price__cta {
+    margin-top: 1.5em;
+  }
+
+  .p-price__ctaLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.9em 2em;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: max(0.875rem, 1em);
+    letter-spacing: 0.08em;
+    transition: opacity 0.3s;
+  }
+
+  .p-price__ctaLink:hover {
+    opacity: 0.7;
+  }
+
   .p-price__box3 {
     text-align: left;
     font-size: 0.9375rem;
@@ -1785,8 +1806,7 @@
       box-sizing: border-box;
     }
 
-    /* 右上の SHOPS / ONLINE SHOP：固定表示のまま、右の余白(--gutter)の幅に収める。
-       中身は余白の線より内側にあるので、スクロールしてもボタンの下に隠れない */
+    /* 右上の SHOPS / ONLINE SHOP：右の余白(--gutter)の幅に収める */
     .p-menu__shopLink,
     .p-menu__shopLink a {
       width: var(--gutter);
