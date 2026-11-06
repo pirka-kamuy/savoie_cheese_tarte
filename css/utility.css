@@ -17,7 +17,7 @@
   
   /* 位置は親（.p-contact__item a > span）で指定するので、ここでは色だけ */
   .u-icon__black {
-    color: var(--color-black);
+    color: currentColor; /* ボタンの文字と同じ色 */
   }
   
   /* スマホ用の左右の余白（PC の余白は .l-main__inner の --gutter で指定済み） */
@@ -47,8 +47,8 @@
     left: 0;
     z-index: 10000;
     padding: 0.75em 1.25em;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     transform: translateY(-100%);
   }
   

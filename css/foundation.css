@@ -11,12 +11,17 @@
 @layer foundation {
   /* ---------- デザイントークン（色・フォントは必ず変数から使う） ---------- */
   :root {
-    --color-accent: #ffd700; /* ブランドのイエロー（旧 gold） */
-    --color-black: #000;
-    --color-white: #fff;
-    --color-bg-gray: #f0f0f0;
-    --color-gray: #808080;
-    --color-gray-dark: #333;
+    /* 配色：ティラミス（案A クラシック）
+       役割ごとに名前を付けているので、色を変えるときはここの値だけ書き換える */
+    --color-main: #6b4226;      /* メイン：ココア（帯・色面・大きな色の面） */
+    --color-sub: #f7f0e4;       /* サブ：マスカルポーネ（セクションの背景） */
+    --color-accent: #8e2c3a;    /* アクセント：マルサラ（大きな英字の装飾・ボタン） */
+    --color-dark: #2a1a12;      /* 文字・ラベル：エスプレッソ */
+    --color-dark-hover: #4a3428;
+    --color-light: #fffdf8;     /* ページの背景、濃い面の上の文字 */
+    --color-on-main: var(--color-light);   /* メイン色の面の上に置く文字の色 */
+    --color-on-accent: var(--color-light); /* アクセント色の面の上に置く文字の色 */
+    --color-gray: #8a7a6e;
     --color-focus: #005fcc;
 
     --font-base: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
@@ -32,8 +37,8 @@
 
   /* ---------- リセット（旧 YUI reset と同じ挙動を必要な分だけ） ---------- */
   html {
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: var(--color-dark);
+    background-color: var(--color-light);
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
@@ -95,7 +100,7 @@
   :focus-visible {
     outline: 3px solid var(--color-focus);
     outline-offset: 2px;
-    box-shadow: 0 0 0 5px var(--color-white);
+    box-shadow: 0 0 0 5px var(--color-light);
   }
 
   /* ---------- Sass 版から移行した html / body のスタイル ---------- */

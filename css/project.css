@@ -40,7 +40,7 @@
     overflow-x: hidden;
     padding-top: 12.5vw;
     padding-bottom: 11.11111vw;
-    background-color: var(--color-bg-gray);
+    background-color: var(--color-sub);
   }
   
   .svg_1 {
@@ -49,7 +49,7 @@
     left: 0;
     width: 100%;
     height: 12.5vw;
-    fill: var(--color-accent);
+    fill: var(--color-main);
   }
   
   .icon {
@@ -171,13 +171,13 @@
   
   @media (width < 768px) {
     .p-memory__container {
-      font-size: max(0.75rem, 4.8vw);
+      font-size: 1.125rem;
     }
     .p-memory__container h2 {
-      font-size: max(0.75rem, 6.4vw);
+      font-size: clamp(1.25rem, 6.4vw, 1.75rem);
     }
     .p-memory__body {
-      font-size: max(0.75rem, 3.73333vw);
+      font-size: 0.875rem;
     }
     .p-memory:before {
       padding-top: 153%;
@@ -204,8 +204,8 @@
   }
   .p-menu__toggle {
     display: block;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     text-transform: uppercase;
     white-space: nowrap;
     padding: 0 32px;
@@ -219,7 +219,7 @@
     vertical-align: top;
   }
   .p-menu__toggle:hover {
-    background-color: var(--color-gray-dark);
+    background-color: var(--color-dark-hover);
     transition: 1s;
   }
   .p-menu__langGroup {
@@ -248,12 +248,12 @@
     cursor: pointer;
   }
   .p-menu__wrapper ul a:hover {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--color-light);
+    color: var(--color-dark);
   }
   .p-menu__wrapper ul a {
     display: block;
-    color: var(--color-white);
+    color: var(--color-light);
     text-transform: uppercase;
     white-space: nowrap;
     pointer-events: all;
@@ -263,8 +263,8 @@
     font-size: 16px;
   }
   .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en:hover, .p-menu__langChoice a.is-en:focus-visible {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--color-light);
+    color: var(--color-dark);
   }
   .p-menu__langChoice a.icon {
     position: relative;
@@ -298,8 +298,8 @@
   }
   .p-menu__shopLink a {
     display: block;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
@@ -336,7 +336,7 @@
     height: 18px;
     text-align: right;
     line-height: 1;
-    color: var(--color-black);
+    color: var(--color-dark);
     text-decoration: none;
     cursor: pointer;
   }
@@ -351,7 +351,7 @@
     border-radius: 100%;
   }
   .p-menu__linkDot:hover {
-    background-color: var(--color-black);
+    background-color: var(--color-dark);
   }
   .p-menu__linkLabel {
     position: absolute;
@@ -396,7 +396,7 @@
       margin-right: -12.857142857%;
       width: 25.714285714%;
       height: 1.428571429%;
-      background-color: var(--color-white);
+      background-color: var(--color-light);
       content: "";
       transition-duration: 0.3s;
     }
@@ -406,7 +406,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--color-white);
+      background-color: var(--color-light);
       content: "";
       transition-duration: 0.3s;
     }
@@ -416,7 +416,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--color-white);
+      background-color: var(--color-light);
       content: "";
       transition-duration: 0.3s;
     }
@@ -437,10 +437,10 @@
       text-decoration: none;
     }
     .p-menu__pageNav ul a {
-      font-size: max(0.75rem, 3.5vw);
+      font-size: 0.8125rem;
     }
     .p-menu__country, .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en {
-      font-size: max(0.75rem, 2vw);
+      font-size: 0.75rem;
     }
     .p-menu__pageNav {
       position: relative;
@@ -462,12 +462,12 @@
       width: 18.66667vw;
       height: 18.66667vw;
       white-space: nowrap;
-      font-size: max(0.75rem, 4.8vw);
+      font-size: 1.125rem;
     }
     .p-menu__shopLink a {
       width: 18.66667vw;
       height: 18.66667vw;
-      font-size: max(0.75rem, 3.46667vw);
+      font-size: 0.8125rem;
       line-height: 18.66667vw;
     }
     .p-menu__online a {
@@ -489,12 +489,12 @@
       display: block;
       margin: 0 3.2vw;
       height: 1px;
-      background-color: var(--color-white);
+      background-color: var(--color-light);
       line-height: 1;
       pointer-events: none;
     }
     .p-menu .c-icon--globe, .p-menu .u-icon__white {
-      font-size: max(0.75rem, 3vw);
+      font-size: 0.75rem;
     }
   }
   .p-material {
@@ -568,6 +568,7 @@
     content: "";
   }
   .p-material__cheese h2 .u-downAnime, .p-material__tart h2 .u-downAnime {
+    color: var(--color-on-main);
     position: relative;
     z-index: 10;
     font-weight: 400;
@@ -638,14 +639,14 @@
     }
     .p-material__cheese h2 {
       top: 27vw;
-      font-size: max(0.75rem, 3.888vw);
+      font-size: 0.9375rem;
       left: 0;
       padding: 4vw 9vw;
       height: 45vw;
     }
     .p-material__tart h2 {
       top: 23vw;
-      font-size: max(0.75rem, 2.888vw);
+      font-size: 0.75rem;
       height: 32vw;
       right: 0;
     }
@@ -674,13 +675,13 @@
     .p-material__cheeseDescription {
       bottom: -41vw;
       left: 34.571429%;
-      font-size: max(0.75rem, 2.9vw);
+      font-size: 0.75rem;
       width: 73.112222%;
     }
     .p-material__tartDescription {
       bottom: -34vw;
       left: 10.571429%;
-      font-size: max(0.75rem, 2.9vw);
+      font-size: 0.75rem;
       width: 63.112222%;
     }
     .p-material__tart {
@@ -697,7 +698,7 @@
       font-weight: 400;
     }
     .p-material__cheeseTitle, .p-material__tartTitle {
-      font-size: max(0.75rem, 23vw);
+      font-size: clamp(4.625rem, 23vw, 6.1875rem);
     }
     .p-material__cheeseTitle, .p-material__cheeseText, .p-material__tartTitle, .p-material__tartText {
       position: absolute;
@@ -712,7 +713,7 @@
     }
     .p-material__cheeseText {
       right: -20vw;
-      font-size: max(0.75rem, 4.1111vw);
+      font-size: 0.9375rem;
       height: 83vw;
       top: -24vw;
     }
@@ -723,7 +724,7 @@
     .p-material__tartText {
       top: -9vw;
       left: -2vw;
-      font-size: max(0.75rem, 4.1111vw);
+      font-size: 0.9375rem;
       height: 82vw;
     }
     .p-material__cheeseContainer img {
@@ -745,21 +746,21 @@
     margin-top: 6.25vw;
     width: 100%;
   }
+  /* セクションの高さは中身に合わせて伸びる（最低でも背景画像の比率の高さ） */
   .p-price__container {
+    position: relative;
+    min-height: 91.194444vw;
+  }
+  .p-price__bg {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100%;
   }
   .p-price__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: table;
+    position: relative;
     width: 100%;
-    height: 100%;
-    padding-top: 14vw;
+    padding: 14vw 0 4vw;
   }
   .p-price__title {
     font-size: clamp(3.1875rem, 5.867vw, 5.25rem);
@@ -785,27 +786,32 @@
   .p-price__contentImage {
     width: 100%;
   }
-  .p-price__name, .p-price__amount {
+  .p-price__name {
     position: absolute;
     overflow: hidden;
-  }
-  .p-price__name {
     top: -2vw;
     left: -2vw;
   }
-  .p-price__text1 {
-    bottom: 6vw;
-    right: -3vw;
+  /* 価格ラベル：写真の下端に少し重ね、その下に説明とボタンを並べる */
+  .p-price__amount {
+    position: relative;
+    overflow: hidden;
+    width: max-content; /* 1行に収める（写真の右端から少しはみ出してよい） */
+    margin: -3vw 0 0 34%;
+    white-space: nowrap;
   }
-  .p-price__text6 {
-    bottom: -5vw;
-    right: -3vw;
+  .p-price__detail {
+    margin: 1.2em 0 0 34%;
+    font-size: 0.875rem;
+  }
+  .p-price__desc {
+    line-height: 1.7;
   }
   .p-price__name .p-price__slide, .p-price__amount .p-price__slide {
     position: relative;
     z-index: 10;
     display: block;
-    color: var(--color-white);
+    color: var(--color-light);
     line-height: 1;
   }
   .p-price__name .p-price__slide {
@@ -829,9 +835,10 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6em;
-    padding: 0.9em 2em;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    padding: 0.9em 1.6em;
+    white-space: nowrap; /* ボタンの文言は1行に */
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: max(0.875rem, 1em);
     letter-spacing: 0.08em;
     transition: opacity 0.3s;
@@ -855,11 +862,6 @@
     transition-duration: 1s;
   }
   
-  .p-price:before {
-    display: block;
-    padding-top: 91.194444%;
-    content: "";
-  }
   
   @media (width < 768px) {
     .p-price {
@@ -867,13 +869,14 @@
     }
     .p-price__inner {
       padding-top: 50vw;
+      padding-bottom: 24vw; /* 下の HOW TO EAT（上に食い込む配置）と重ならないよう余白を確保 */
     }
     .p-price__box3 {
-      font-size: max(0.75rem, 2.7vw);
+      font-size: 0.75rem;
       padding: 25vw 5vw 0 5vw;
     }
     .p-price__title {
-      font-size: max(0.75rem, 13.33333vw);
+      font-size: clamp(2.6875rem, 13.33333vw, 3.5625rem);
       text-align: center;
     }
     .p-price__contentInner {
@@ -895,7 +898,7 @@
     .p-price__contentImage {
       width: 100%;
     }
-    .p-price__name, .p-price__amount {
+    .p-price__name {
       position: absolute;
       overflow: hidden;
     }
@@ -904,34 +907,37 @@
       left: -5vw;
     }
     .p-price__amount {
-      bottom: -5vw;
-      right: -8vw;
+      margin: -5vw -8vw 0 auto;
+    }
+    .p-price__detail {
+      margin: 5vw 0 0;
     }
     .p-price__name .p-price__slide, .p-price__amount .p-price__slide {
       position: relative;
       z-index: 10;
       display: block;
-      color: var(--color-white);
+      color: var(--color-light);
       line-height: 1;
     }
     .p-price__name .p-price__slide {
       padding: 3.4vw 6vw;
-      font-size: max(0.75rem, 3.6vw);
+      font-size: 0.875rem;
     }
     .p-price__amount .p-price__slide {
       padding: 4vw 5vw;
-      font-size: max(0.75rem, 3.38889vw);
+      font-size: 0.8125rem;
     }
     .p-price__tax {
-      font-size: max(0.75rem, 2.222vw);
+      font-size: 0.75rem;
     }
-    .p-price:before {
-      padding-top: 327.733333333%;
+    .p-price__container {
+      min-height: 327.733333vw;
     }
   }
   .p-eat {
     position: relative;
-    background-color: var(--color-accent);
+    background-color: var(--color-main);
+    color: var(--color-on-main);
   }
   .p-eat__inner {
     padding: 18vw 5vw 0 5vw;
@@ -974,8 +980,8 @@
     display: block;
     width: 4.666vw;
     height: 4.4vw;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     content: counter(steps);
     text-align: center;
     line-height: 4.5vw;
@@ -985,7 +991,7 @@
     position: relative;
     z-index: 10;
     display: block;
-    color: var(--color-white);
+    color: var(--color-light);
     letter-spacing: 0.08em;
     font-size: clamp(2rem, 3vw, 2.6875rem);
     font-family: var(--font-en);
@@ -1040,7 +1046,7 @@
       padding: 14vw 5vw 0 6vw;
     }
     .p-eat__inner header p {
-      font-size: max(0.75rem, 3.7vw);
+      font-size: 0.875rem;
       line-height: 2;
       padding-top: 24vw;
       margin-left: 5vw;
@@ -1059,15 +1065,15 @@
       padding: 5.86667vw 0 0 5.86667vw;
     }
     .p-eat__stepBox span {
-      font-size: max(0.75rem, 6.66667vw);
+      font-size: clamp(1.3125rem, 6.66667vw, 1.8125rem);
     }
     .p-eat__stepBox h3 {
       margin-top: 2.66667vw;
       margin-bottom: 3.73333vw;
-      font-size: max(0.75rem, 3.2vw);
+      font-size: 0.75rem;
     }
     .p-eat__stepBox p {
-      font-size: max(0.75rem, 2.9vw);
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
       line-height: 2;
     }
@@ -1081,7 +1087,7 @@
       margin-top: 13.33333vw;
     }
     .p-eat__stepText {
-      font-size: max(0.75rem, 2.5vw);
+      font-size: 0.75rem;
       line-height: 1.8;
       margin-top: 16vw;
       position: initial;
@@ -1092,7 +1098,7 @@
       width: 4.16667vw;
       height: 4.16667vw;
       line-height: 4.16667vw;
-      font-size: max(0.75rem, 1.66667vw);
+      font-size: 0.75rem;
     }
     .p-eat__stepBox img {
       width: 100%;
@@ -1100,7 +1106,7 @@
     .p-eat__stepBox:before {
       width: 8vw;
       height: 8vw;
-      font-size: max(0.75rem, 4vw);
+      font-size: 0.9375rem;
       line-height: 8vw;
     }
     img.p-eat__imgTarte {
@@ -1116,7 +1122,7 @@
     overflow-x: hidden;
     padding-top: 12.5vw;
     padding-bottom: 11.11111vw;
-    background-color: var(--color-bg-gray);
+    background-color: var(--color-sub);
   }
   .p-passion__box {
     position: relative;
@@ -1146,6 +1152,7 @@
     white-space: nowrap;
   }
   .p-passion__text {
+    color: var(--color-on-main);
     position: relative;
     z-index: 10;
     display: block;
@@ -1210,6 +1217,7 @@
     filter: grayscale(0);
   }
   .p-passion__itemTitle {
+    color: var(--color-on-main);
     position: relative;
     z-index: 10;
     display: block;
@@ -1267,7 +1275,7 @@
     left: 0;
     width: 100%;
     height: 12.5vw;
-    fill: var(--color-accent);
+    fill: var(--color-main);
   }
   
   .itemLeft1 {
@@ -1306,7 +1314,7 @@
       width: 0;
     }
     .p-passion__text {
-      font-size: max(0.75rem, 6.2vw);
+      font-size: clamp(1.25rem, 6.2vw, 1.6875rem);
     }
     .p-passion__text1 {
       padding: 4.9vw 10vw;
@@ -1314,18 +1322,18 @@
       word-break: keep-all; /* 改行は HTML の <wbr> の位置（文節の区切り）だけにする */
     }
     .p-passion__philosophy h3, .p-passion__design h3 {
-      font-size: max(0.75rem, 20.16vw);
+      font-size: clamp(4.0625rem, 20.16vw, 5.4375rem);
     }
     .p-passion__philosophy p, .p-passion__design p {
       letter-spacing: 0.04em;
-      font-size: max(0.75rem, 4vw);
+      font-size: 0.9375rem;
     }
     .p-passion__textBox p {
       top: 70%;
       left: 72%;
     }
     .p-passion__itemTitle1, .p-passion__itemTitle2, .p-passion__itemTitle3 {
-      font-size: max(0.75rem, 3.8vw);
+      font-size: 0.875rem;
     }
     .p-passion__itemTitle1 {
       padding: 4.93333vw 7.2vw;
@@ -1374,7 +1382,7 @@
     position: relative;
     z-index: 50;
     width: 100%;
-    background-color: var(--color-bg-gray);
+    background-color: var(--color-sub);
   }
   .p-shop__title {
     position: absolute;
@@ -1391,7 +1399,7 @@
     z-index: 10;
     width: 100%;
     height: 27.280477408%;
-    fill: var(--color-white);
+    fill: var(--color-light);
   }
   .p-shop__text {
     position: absolute;
@@ -1408,7 +1416,7 @@
     font-family: var(--font-en);
   }
   .p-shop__text header h2 a {
-    color: var(--color-white);
+    color: var(--color-light);
     cursor: pointer;
   }
   .p-shop__imgBox {
@@ -1440,11 +1448,7 @@
     font-size: clamp(1.8125rem, 3.378vw, 3.0625rem);
   }
   
-  .p-shop__icon {
-    animation-name: fadeIn;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
+  /* 「＞」の揺れ：画面に入ったら数回だけ動いて止まり、マウスを乗せる・選ぶとまた動く（animation.css） */
   
   @keyframes fadeIn {
     from {
@@ -1471,20 +1475,20 @@
       z-index: 10;
       width: 100%;
       height: 18.66667vw;
-      fill: var(--color-white);
+      fill: var(--color-light);
     }
     .p-shop__text header h2 {
-      font-size: max(0.75rem, 13.33333vw);
+      font-size: clamp(2.6875rem, 13.33333vw, 3.5625rem);
     }
     .p-shop:before {
       padding-top: 126%;
     }
     .p-shop__title h2 .p-shop__icon {
-      font-size: max(0.75rem, 10.22222vw);
+      font-size: clamp(2.0625rem, 10.22222vw, 2.75rem);
     }
   }
   .p-news {
-    background-color: var(--color-white);
+    background-color: var(--color-light);
   }
   .p-news__title {
     margin: 40px 0;
@@ -1501,7 +1505,8 @@
     margin: 45px 0 120px 0;
   }
   .p-news__btnBox a {
-    background-color: var(--color-accent);
+    background-color: var(--color-main);
+    color: var(--color-on-main);
     padding: 1.9vw 4.777vw;
     font-size: 0.9375rem;
     font-family: var(--font-en);
@@ -1549,19 +1554,19 @@
   
   @media (width < 768px) {
     .p-news__title h2 {
-      font-size: max(0.75rem, 8vw);
+      font-size: clamp(1.625rem, 8vw, 2.125rem);
     }
     .p-news__list li {
       clear: both;
       width: 100%;
     }
     .p-news__itemBox h3 {
-      font-size: max(0.75rem, 3.2vw);
+      font-size: 0.75rem;
       line-height: 1.4;
     }
     .p-news__itemBox p {
       margin-top: 1.49925vh;
-      font-size: max(0.75rem, 2.66667vw);
+      font-size: 0.75rem;
     }
     .p-news__item {
       margin-top: 5.33333vw;
@@ -1577,7 +1582,7 @@
     }
     .p-news__btnBox a {
       padding: 3.53333vw 9.46667vw;
-      font-size: max(0.75rem, 4vw);
+      font-size: 0.9375rem;
     }
     .p-news__item div {
       margin-top: 1.4vw;
@@ -1587,7 +1592,7 @@
   }
   .p-contact {
     margin-top: 70px;
-    background-color: var(--color-bg-gray);
+    background-color: var(--color-sub);
   }
   .p-contact__triangle {
     width: 100%;
@@ -1615,7 +1620,8 @@
     padding: 2.5em 2em;
     position: relative;
     display: block;
-    background-color: var(--color-accent);
+    background-color: var(--color-main);
+    color: var(--color-on-main);
     margin-right: 4px;
     font-size: 1rem;
     cursor: pointer;
@@ -1667,7 +1673,7 @@
       display: block;
     }
     .p-contact__title h2 {
-      font-size: max(0.75rem, 8vw);
+      font-size: clamp(1.625rem, 8vw, 2.125rem);
     }
     .p-contact__title p {
       line-height: 2;
@@ -1679,12 +1685,12 @@
     }
     .p-contact__list li a {
       padding: 6.66667vw 6vw;
-      font-size: max(0.75rem, 2.8vw);
+      font-size: 0.75rem;
     }
     .p-contact__table {
       width: 100%;
       margin-top: 16vw;
-      font-size: max(0.75rem, 2.66667vw);
+      font-size: 0.75rem;
     }
     .p-contact__table dt {
       width: 33%;
@@ -1696,7 +1702,7 @@
   }
   .c-icon--caret {
     margin-left: 10px;
-    color: var(--color-white);
+    color: var(--color-light);
     transform: rotate(0deg);
     transition: all 0.2s;
   }
@@ -1855,13 +1861,9 @@
       width: 100%;
     }
 
-    /* PRICE：中身は背景の上に重ねたまま中央へ。セクションと背景の高さも同じ倍率に */
-    .p-price__inner {
-      right: 0;
-    }
-
-    .p-price:before {
-      padding-top: calc(91.194444% * var(--content-scale));
+    /* PRICE：最低の高さと背景も同じ倍率に */
+    .p-price__container {
+      min-height: calc(91.194444vw * var(--content-scale));
     }
 
     .p-price__bg img {
@@ -1870,6 +1872,10 @@
     }
 
     /* 縮小したブロック内でも本文は小さくしない：倍率で割り戻して、表示サイズを保つ（最低 13px） */
+    .p-price__detail {
+      font-size: calc(0.875rem / var(--content-scale)); /* 表示 14px */
+    }
+
     .p-material__cheeseDescription,
     .p-material__tartDescription,
     .p-price__box3 {
