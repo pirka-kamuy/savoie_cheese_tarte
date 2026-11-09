@@ -80,10 +80,10 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
     これで `href="#"` はなくなった
 - 文章のティラミス版への差し替え：「記憶に残る、ひとくち」（p-memory）、HOW TO EAT（p-eat）、
   PHILOSOPHY / DESIGN（p-passion。各項目に説明文 `.p-passion__itemText` を追加）は差し替え済み。
-  残り：ESSENCE（CHEESE / TART）、NEWS、写真の説明（alt）、会社情報などのチーズタルトの記述
+  ACCESS（旧 SHOPS。`#access`、お店の情報を追加）と NEWS（4件）も差し替え済み。
+  残り：ESSENCE（CHEESE / TART）、写真の説明（alt）、会社情報などのチーズタルトの記述
 - 写真・ロゴ・HOW TO EAT のアイコン画像をティラミスの素材に差し替え（画像はまとめて差し替える予定）
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
-- NEWS の内容が 2022 年のままなので更新
 
 ## 改修履歴
 

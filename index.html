@@ -68,7 +68,7 @@
                   <li><a class="_linkSlideLeft" href="#price">PRICE</a></li>
                   <li><a class="_linkSlideLeft" href="#eat">HOW TO EAT</a></li>
                   <li><a class="_linkSlideLeft" href="#passion">PHILOSOPHY</a></li>
-                  <li><a class="_linkSlideLeft" href="#shop">SHOPS</a></li>
+                  <li><a class="_linkSlideLeft" href="#access">ACCESS</a></li>
                   <li><a class="_linkSlideLeft" href="#news">NEWS</a></li>
                   <li><a class="_linkSlideLeft" href="#contact">CONTACT - FAQ</a></li>
                 </ul>
@@ -91,9 +91,9 @@
             </div>
           </div>
         </div>
-        <nav class="p-menu__shopNav" aria-label="ショップ">
+        <nav class="p-menu__shopNav" aria-label="アクセス・オンラインショップ">
           <div class="p-menu__shopLink">
-            <a href="#shop">SHOPS</a>
+            <a href="#access">ACCESS</a>
           </div>
           <div class="p-menu__shopLink p-menu__online">
             <a>Online Shop<span class="p-menu__soon">（準備中）</span></a>
@@ -108,7 +108,7 @@
           <li><a class="c-pageLink" href="#price"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">PRICE</span></a></li>
           <li><a class="c-pageLink" href="#eat"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">HOW TO EAT</span></a></li>
           <li><a class="c-pageLink" href="#passion"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">PHILOSOPHY</span></a></li>
-          <li><a class="c-pageLink" href="#shop"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">SHOPS</span></a></li>
+          <li><a class="c-pageLink" href="#access"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">ACCESS</span></a></li>
           <li><a class="c-pageLink" href="#news"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">NEWS</span></a></li>
           <li><a class="c-pageLink" href="#contact"><span class="p-menu__linkDot"></span><span class="p-menu__linkLabel">CONTACT - FAQ</span></a></li>
         </ul>
@@ -288,7 +288,7 @@
                       本日販売分がなくなり次第終了<br>
                       ※イートインは価格が異なります</p>
                     <p class="p-price__cta">
-                      <a class="p-price__ctaLink" href="#shop">お店へのアクセス<svg class="c-icon" aria-hidden="true"><use href="#i-angle"/></svg></a>
+                      <a class="p-price__ctaLink" href="#access">お店へのアクセス<svg class="c-icon" aria-hidden="true"><use href="#i-angle"/></svg></a>
                     </p>
                   </div>
                 </div>
@@ -491,39 +491,60 @@
         </div>
       </section>
 
-      <section class="p-shop" id="shop">
-        <svg class="p-shop__triangle" viewBox="0 0 1920 320" preserveAspectRatio="none" aria-hidden="true">
-          <polygon points="0,320 1920,0 1920,320"></polygon>
-        </svg>
-        <svg class="p-shop__triangle2" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true">
-          <polygon points="0,0 750,900 700,900 0,900"></polygon>
-        </svg>
-        <!-- PC/SP の画像は <picture> で出し分け（必要な方だけ読み込まれる） -->
-        <div>
-          <div class="p-shop__imgBox">
-            <picture>
-              <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
-              <img src="images/pc/shop.webp" width="1920" height="1173" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
-            </picture>
-          </div>
-          <!-- clip-path で隠してから見せる画像は lazy にしない（隠れている間は読み込みが始まらず、表示が遅れるため） -->
-          <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
-            <span class="c-tint p-shop__yellowImg">
+      <section class="p-shop" id="access">
+        <div class="p-shop__visual">
+          <svg class="p-shop__triangle" viewBox="0 0 1920 320" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,320 1920,0 1920,320"></polygon>
+          </svg>
+          <svg class="p-shop__triangle2" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,0 750,900 700,900 0,900"></polygon>
+          </svg>
+          <!-- PC/SP の画像は <picture> で出し分け（必要な方だけ読み込まれる） -->
+          <div>
+            <div class="p-shop__imgBox">
               <picture>
                 <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
-                <img class="c-tint__photo" src="images/pc/shop.webp" width="1920" height="1173" alt="">
+                <img src="images/pc/shop.webp" width="1920" height="1173" alt="トレイに並んだ焼きたてのチーズタルト" loading="lazy">
               </picture>
-            </span>
-          </div>
-        </div>
-        <div class="p-shop__title">
-          <div class="p-shop__text">
-            <div class="l-main__inner">
-              <header>
-                <h2>SHOPS</h2>
-              </header>
+            </div>
+            <!-- clip-path で隠してから見せる画像は lazy にしない（隠れている間は読み込みが始まらず、表示が遅れるため） -->
+            <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
+              <span class="c-tint p-shop__yellowImg">
+                <picture>
+                  <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
+                  <img class="c-tint__photo" src="images/pc/shop.webp" width="1920" height="1173" alt="">
+                </picture>
+              </span>
             </div>
           </div>
+          <div class="p-shop__title">
+            <div class="p-shop__text">
+              <div class="l-main__inner">
+                <header>
+                  <h2>ACCESS</h2>
+                </header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- お店の情報：写真の上には重ねず、写真の下の色の付いた面に置く -->
+        <div class="p-shop__info l-main__inner">
+          <dl class="p-shop__table _scrollBothSlideUp">
+            <dt>店名</dt>
+            <dd>SAVOIA TIRAMISÙ</dd>
+            <dt>住所</dt>
+            <dd>〒000-0000 東京都〇〇区〇〇 1-2-3</dd>
+            <dt>アクセス</dt>
+            <dd>〇〇駅から徒歩5分</dd>
+            <dt>営業時間</dt>
+            <dd>11:00〜20:00(イートインのラストオーダー 19:30)
+              <p class="p-shop__note">※ティラミスは持ち帰り・イートインともに、本日販売分がなくなり次第終了します。コーヒーは閉店まで提供しています。</p>
+            </dd>
+            <dt>定休日</dt>
+            <dd>毎週火曜日・木曜日</dd>
+            <dt>イートイン</dt>
+            <dd>2テーブル(4席)。こだわりの豆のコーヒーもご用意しています</dd>
+          </dl>
         </div>
       </section>
 
@@ -535,45 +556,35 @@
           <div class="p-news__box">
             <ul class="p-news__list">
               <li class="p-news__item _scrollBothListUp">
+                <!-- 画像は仮（画像をまとめて差し替えるときに対応） -->
                 <img src="images/news/new_year.webp" width="400" height="390" alt="" loading="lazy">
                 <div class="p-news__itemBox">
-                  <h3>【2022-2023】年末年始の営業時間のお知らせ</h3>
-                  <p><time datetime="2022-12-27">2022.12.27</time></p>
+                  <h3>【年末年始の営業】12月29日(火)〜1月3日(日)はお休みします</h3>
+                  <p><time datetime="2026-11-05">2026.11.05</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
+                <!-- 画像は仮（画像をまとめて差し替えるときに対応） -->
                 <img src="images/news/terrine.webp" width="400" height="267" alt="" loading="lazy">
                 <div class="p-news__itemBox">
-                  <h3>【新発売】ヘーゼルナッツとブロンドチョコのチーズテリーヌ</h3>
-                  <p><time datetime="2022-11-21">2022.11.21</time></p>
+                  <h3>【10/2発売】季節限定「ほうじ茶ティラミス」</h3>
+                  <p><time datetime="2026-09-25">2026.09.25</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
+                <!-- 画像は仮（画像をまとめて差し替えるときに対応） -->
                 <img src="images/news/sweet_potato.webp" width="400" height="325" alt="" loading="lazy">
                 <div class="p-news__itemBox">
-                  <h3>【12/1新発売】焼きたてチーズタルト スイートポテト</h3>
-                  <p><time datetime="2022-10-06">2022.10.06</time></p>
+                  <h3>【お知らせ】冷凍のBOX・ホールを販売するオンラインショップは、現在準備中です</h3>
+                  <p><time datetime="2026-09-01">2026.09.01</time></p>
                 </div>
               </li>
               <li class="p-news__item _scrollBothListUp">
-                <img src="images/news/cial_yokohama.webp" width="400" height="300" alt="" loading="lazy">
-                <div class="p-news__itemBox">
-                  <h3>【CIAL横浜】クローズのお知らせ</h3>
-                  <p><time datetime="2022-12-27">2022.12.27</time></p>
-                </div>
-              </li>
-              <li class="p-news__item _scrollBothListUp">
-                <img src="images/news/baumkuchen.webp" width="400" height="267" alt="" loading="lazy">
-                <div class="p-news__itemBox">
-                  <h3>【コトチカ京都店】「RINGO」の焼きたてカスタードチョコバウムを限定販売！</h3>
-                  <p><time datetime="2022-11-21">2022.11.21</time></p>
-                </div>
-              </li>
-              <li class="p-news__item _scrollBothListUp">
+                <!-- 画像は仮（画像をまとめて差し替えるときに対応） -->
                 <img src="images/news/montblanc.webp" width="400" height="267" alt="" loading="lazy">
                 <div class="p-news__itemBox">
-                  <h3>【10/21新発売】やまえ栗のモンブランチーズタルト（10/19追記あり）</h3>
-                  <p><time datetime="2022-10-06">2022.10.06</time></p>
+                  <h3>【7/17オープン】ティラミス専門店 SAVOIA TIRAMISÙ がオープンします</h3>
+                  <p><time datetime="2026-07-01">2026.07.01</time></p>
                 </div>
               </li>
             </ul>
@@ -629,7 +640,7 @@
               </details>
               <details class="p-faq__item">
                 <summary class="p-faq__question">お店で食べることはできますか？</summary>
-                <p class="p-faq__answer">店内に小さなイートインスペースがあります。こだわりの豆で淹れたコーヒーもご用意しています。イートインは持ち帰りと価格が異なります。</p>
+                <p class="p-faq__answer">店内に小さなイートインスペース(2テーブル・4席)があります。こだわりの豆で淹れたコーヒーもご用意しています。ティラミスは本日販売分がなくなり次第終了しますが、コーヒーは閉店まで提供しています。イートインは持ち帰りと価格が異なります。</p>
               </details>
             </div>
           </div>
@@ -674,7 +685,7 @@
                   <a href="#price">PRICE</a>
                   <a href="#eat">HOW TO EAT</a>
                   <a href="#passion">PHILOSOPHY</a>
-                  <a href="#shop">SHOPS</a>
+                  <a href="#access">ACCESS</a>
                   <a href="#news">NEWS</a>
                   <a href="#contact">CONTACT - FAQ</a>
                   <a>ONLINE SHOP（準備中）</a>
