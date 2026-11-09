@@ -3,10 +3,6 @@
    ========================================================================== */
 
 @layer project {
-  .c-icon--external {
-    margin-left: 10px;
-  }
-  
   .p-superWrapper {
     position: relative;
     overflow: hidden;
@@ -200,7 +196,6 @@
     top: 0;
     right: 0;
     z-index: 100;
-    cursor: pointer;
   }
   .p-menu__toggle {
     display: block;
@@ -213,10 +208,6 @@
     line-height: 56px;
     font-size: 16px;
     transition: 1s;
-  }
-  .p-menu__country ul {
-    display: inline-block;
-    vertical-align: top;
   }
   .p-menu__toggle:hover {
     background-color: var(--color-dark-hover);
@@ -245,9 +236,8 @@
   .p-menu__wrapper ul {
     display: inline-block;
     vertical-align: top;
-    cursor: pointer;
   }
-  .p-menu__wrapper ul a:hover {
+  .p-menu__wrapper ul a[href]:hover {
     background-color: var(--color-light);
     color: var(--color-dark);
   }
@@ -262,7 +252,7 @@
     line-height: 40px;
     font-size: 16px;
   }
-  .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en:hover, .p-menu__langChoice a.is-en:focus-visible {
+  .p-menu__langChoice a.is-jp {
     background-color: var(--color-light);
     color: var(--color-dark);
   }
@@ -294,7 +284,6 @@
     z-index: 0;
     width: 160px;
     height: 56px;
-    cursor: pointer;
   }
   .p-menu__shopLink a {
     display: block;
@@ -308,9 +297,18 @@
     line-height: 56px;
     transition: 1s;
   }
-  .p-menu__shopLink a:hover {
-    background-color: var(--color-gray);
-    transition: 1s;
+  .p-menu__shopLink a[href]:hover {
+    background-color: var(--color-dark-hover);
+  }
+  /* 「（準備中）」の添え書き：右上の ONLINE SHOP では下の行に小さめに置く */
+  .p-menu__online a {
+    flex-direction: column;
+  }
+  .p-menu__online .p-menu__soon {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    white-space: nowrap;
   }
   .p-menu__online {
     top: 57px;
@@ -439,7 +437,7 @@
     .p-menu__pageNav ul a {
       font-size: 0.8125rem;
     }
-    .p-menu__country, .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en {
+    .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en {
       font-size: 0.75rem;
     }
     .p-menu__pageNav {
@@ -493,7 +491,7 @@
       line-height: 1;
       pointer-events: none;
     }
-    .p-menu .c-icon--globe, .p-menu .u-icon__white {
+    .p-menu .c-icon--globe {
       font-size: 0.75rem;
     }
   }
@@ -841,11 +839,11 @@
     color: var(--color-on-accent);
     font-size: max(0.875rem, 1em);
     letter-spacing: 0.08em;
-    transition: opacity 0.3s;
+    transition: background-color 0.3s;
   }
 
-  .p-price__ctaLink:hover {
-    opacity: 0.7;
+  .p-price__ctaLink[href]:hover {
+    background-color: var(--color-accent-hover);
   }
 
   .p-price__box3 {
@@ -1415,9 +1413,8 @@
     font-size: clamp(2.375rem, 4.444vw, 4rem);
     font-family: var(--font-en);
   }
-  .p-shop__text header h2 a {
+  .p-shop__text header h2 {
     color: var(--color-light);
-    cursor: pointer;
   }
   .p-shop__imgBox {
     position: relative;
@@ -1442,22 +1439,6 @@
     display: none;
   }
   
-  .p-shop__title h2 .p-shop__icon {
-    position: relative;
-    display: inline-block;
-    font-size: clamp(1.8125rem, 3.378vw, 3.0625rem);
-  }
-  
-  /* 「＞」の揺れ：画面に入ったら数回だけ動いて止まり、マウスを乗せる・選ぶとまた動く（animation.css） */
-  
-  @keyframes fadeIn {
-    from {
-      transform: translateX(-20px);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
   
   @media (width < 768px) {
     .p-shop__imgBox img, .p-shop__yellowImg {
@@ -1483,9 +1464,6 @@
     .p-shop:before {
       padding-top: 126%;
     }
-    .p-shop__title h2 .p-shop__icon {
-      font-size: clamp(2.0625rem, 10.22222vw, 2.75rem);
-    }
   }
   .p-news {
     background-color: var(--color-light);
@@ -1493,27 +1471,13 @@
   .p-news__title {
     margin: 40px 0;
   }
-  .p-news__title h2, .p-news__btnBox {
+  .p-news__title h2 {
     text-align: center;
     letter-spacing: 0.08em;
   }
   .p-news__title h2 {
     font-size: clamp(1.75rem, 2.604vw, 2.3125rem);
     font-family: var(--font-en);
-  }
-  .p-news__btnBox {
-    margin: 45px 0 120px 0;
-  }
-  .p-news__btnBox a {
-    background-color: var(--color-main);
-    color: var(--color-on-main);
-    padding: 1.9vw 4.777vw;
-    font-size: 0.9375rem;
-    font-family: var(--font-en);
-    cursor: pointer;
-  }
-  .p-news__btnBox a:hover {
-    opacity: 0.5;
   }
   .p-news__box ul:after {
     content: "";
@@ -1523,10 +1487,6 @@
   .p-news__list li {
     float: left;
     width: 50%;
-    cursor: pointer;
-  }
-  .p-news__list li:hover {
-    opacity: 0.5;
   }
   .p-news__item {
     display: flex;
@@ -1576,14 +1536,6 @@
       width: 17.33333vw;
       height: 17.33333vw;
     }
-    .p-news__btnBox {
-      margin-top: 16vw;
-      margin-bottom: 18.66667vw;
-    }
-    .p-news__btnBox a {
-      padding: 3.53333vw 9.46667vw;
-      font-size: 0.9375rem;
-    }
     .p-news__item div {
       margin-top: 1.4vw;
       padding-left: 2.33333vw;
@@ -1624,10 +1576,10 @@
     color: var(--color-on-main);
     margin-right: 4px;
     font-size: 1rem;
-    cursor: pointer;
+    transition: background-color 0.3s;
   }
-  .p-contact__list li a:hover {
-    opacity: 0.5;
+  .p-contact__list li a[href]:hover {
+    background-color: var(--color-main-hover);
   }
   .p-contact__box ul:after {
     content: "";

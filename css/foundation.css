@@ -17,7 +17,12 @@
     --color-sub: #f7f0e4;       /* サブ：マスカルポーネ（セクションの背景） */
     --color-accent: #8e2c3a;    /* アクセント：マルサラ（大きな英字の装飾・ボタン） */
     --color-dark: #2a1a12;      /* 文字・ラベル：エスプレッソ */
-    --color-dark-hover: #4a3428;
+    /* ホバー用の色：薄くする（opacity）と文字も読みにくくなるので、背景色を少し変える */
+    --color-main-hover: #563419;    /* メイン色のボタン（CONTACT）にマウスを乗せたとき：少し濃く */
+    --color-accent-hover: #74222f;  /* アクセント色のボタン（PRICE）にマウスを乗せたとき：少し濃く */
+    --color-dark-hover: #4a3428;    /* 濃い色のボタン（JP・SHOPS）にマウスを乗せたとき：少し明るく */
+    --color-hover-veil-light: rgb(255 253 248 / 0.7); /* 写真の上の濃い色のロゴ：明るい膜を敷く */
+    --color-hover-veil-dark: rgb(42 26 18 / 0.45);    /* 写真の上の白い文字（フッター）：暗い膜を敷く */
     --color-light: #fffdf8;     /* ページの背景、濃い面の上の文字 */
     --color-on-main: var(--color-light);   /* メイン色の面の上に置く文字の色 */
     --color-on-accent: var(--color-light); /* アクセント色の面の上に置く文字の色 */
@@ -94,6 +99,11 @@
 
   button {
     color: inherit;
+  }
+
+  /* 行き先のない <a>（href なし）は押せる見た目にしない */
+  a:not([href]) {
+    cursor: default;
   }
 
   /* キーボード操作時のフォーカスを、どの背景色の上でも見えるように */

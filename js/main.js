@@ -42,7 +42,6 @@
     { selector: '.u-downAnime', className: 'js-textSlideDown', childSelector: '.u-blocking', childClassName: 'js-textSlide', delay: 1000 },
     { selector: '.u-textLeft', className: 'slideAnimeLeft', childSelector: '.u-textLeftAnime', childClassName: 'slideAnimeRight', delay: 300 },
     { selector: '.p-passion__comment', className: 'js-headerActive' },
-    { selector: '.p-shop__icon', className: 'is-inview' }, // SHOPS の「＞」を画面に入ったときだけ揺らす
 
     // 価格
     { selector: '.fadeIn', className: 'js-fadeIn' },

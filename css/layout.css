@@ -36,9 +36,12 @@
     display: block;
     transition: 1s;
   }
-  .l-header__box img:hover {
-    opacity: 0.5;
-    transition: 1s;
+  .l-header__box a {
+    display: block;
+    transition: background-color 0.3s;
+  }
+  .l-header__box a:hover {
+    background-color: var(--color-hover-veil-light);
   }
   
   .l-header:before {
@@ -108,9 +111,6 @@
     z-index: 50;
     padding: 0 3.333333333em 0 14.666666667em;
   }
-  .l-footer__list {
-    margin-top: 4.362050164%;
-  }
   .l-footer__text {
     position: absolute;
     right: 6.166667em;
@@ -134,29 +134,22 @@
   .l-footer__link a:first-child {
     margin-left: 0;
   }
-  .l-footer__link a:hover {
-    opacity: 0.5;
+  /* 幅が足りないときはリンク単位で次の行へ（1つのリンクの途中では折り返さない）。右寄せ */
+  .l-footer__link {
+    text-align: right;
+  }
+  .l-footer__link a {
+    display: inline-block;
+    padding: 0.3em 0.4em;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+  }
+  .l-footer__link a[href]:hover {
+    background-color: var(--color-hover-veil-dark);
   }
   .l-footer__text {
     color: var(--color-light);
   }
-  .l-footer__list li {
-    display: inline-block;
-    width: 1.99999vw;
-    height: 20px;
-  }
-  .l-footer__list li a {
-    color: var(--color-light);
-    font-size: clamp(1.5rem, 2.25vw, 2rem);
-    cursor: pointer;
-  }
-  .l-footer__list li a:hover {
-    opacity: 0.8;
-  }
-  .l-footer__item {
-    padding-left: 2vw;
-  }
-  
   .l-footer .l-footer__triangle {
     fill: var(--color-sub);
   }
@@ -198,15 +191,6 @@
       bottom: 6vw;
       padding: 0 1.333333em 0 10.666667em;
     }
-    .l-footer__list {
-      display: flex;
-    }
-    .l-footer__list li {
-      width: 7.99999vw;
-    }
-    .l-footer__list li a {
-      font-size: clamp(1.625rem, 7.999999vw, 2.125rem);
-    }
     .l-footer .l-footer__inner:before {
       padding-top: 93%;
     }
@@ -235,6 +219,7 @@
     .l-footer__linkBox {
       right: var(--gutter);
       padding-right: 0;
+      padding-bottom: 3.5em; /* 右下のコピーライトの高さ分 */
     }
   }
 }

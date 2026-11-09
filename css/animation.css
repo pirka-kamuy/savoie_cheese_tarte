@@ -399,26 +399,6 @@
     transition-duration: 3s;
   }
   
-  /* SHOPS の「＞」：止まらない動きは避ける（WCAG 2.2.2）。
-     画面に入ったら 1.2秒 × 3回（5秒以内）だけ揺れて止まり、マウスを乗せる・キーボードで選ぶとまた揺れる */
-  .p-shop__icon.is-inview {
-    animation: fadeIn 1.2s ease-in-out 3;
-  }
-
-  .p-shop__text a:hover .p-shop__icon,
-  .p-shop__text a:focus-visible .p-shop__icon {
-    animation: p-shop-nudge 1.2s ease-in-out 2; /* 別名のキーフレームにして、毎回最初から動かす */
-  }
-
-  @keyframes p-shop-nudge {
-    from {
-      transform: translateX(-20px);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
   .p-menu__shopLink.js-toHide {
     transform: translateY(-500%);
   }
