@@ -300,6 +300,13 @@
   .p-menu__shopLink a[href]:hover {
     background-color: var(--color-dark-hover);
   }
+  /* 準備中（href なし）：塗りつぶしの SHOPS と見分けがつくよう、明るい背景＋枠線だけ。
+     写真の上に置くので背景は透明にせず、文字のコントラストを保つ */
+  .p-menu__shopLink a:not([href]) {
+    background-color: var(--color-unavailable-bg);
+    color: var(--color-unavailable-text);
+    box-shadow: inset 0 0 0 1px var(--color-unavailable-border); /* 枠線（ボタンの大きさは変えない） */
+  }
   /* 「（準備中）」の添え書き：右上の ONLINE SHOP では下の行に小さめに置く */
   .p-menu__online a {
     flex-direction: column;
@@ -844,6 +851,12 @@
 
   .p-price__ctaLink[href]:hover {
     background-color: var(--color-accent-hover);
+  }
+  /* 準備中（href なし）：塗りつぶしをやめ、背景は透明・枠線だけの控えめな見た目に */
+  .p-price__ctaLink:not([href]) {
+    background-color: transparent;
+    color: var(--color-unavailable-text);
+    box-shadow: inset 0 0 0 1.5px var(--color-unavailable-border); /* 枠線（ボタンの大きさは変えない） */
   }
 
   .p-price__box3 {

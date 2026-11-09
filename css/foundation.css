@@ -27,6 +27,11 @@
     --color-on-main: var(--color-light);   /* メイン色の面の上に置く文字の色 */
     --color-on-accent: var(--color-light); /* アクセント色の面の上に置く文字の色 */
     --color-gray: #8a7a6e;
+
+    /* 行き先がまだない（準備中）の項目：押せるボタンと見分けるため、塗りつぶさず枠線だけ */
+    --color-unavailable-text: var(--color-dark);    /* 文字 */
+    --color-unavailable-border: var(--color-dark);  /* 枠線 */
+    --color-unavailable-bg: var(--color-light);     /* 写真の上に置くときの背景（文字を読みやすく） */
     --color-focus: #005fcc;
 
     --font-base: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
