@@ -28,6 +28,27 @@
     --color-on-accent: var(--color-light); /* アクセント色の面の上に置く文字の色 */
     --color-gray: #8a7a6e;
 
+    /* 写真に重ねる色（TOP の色面・SHOPS・フッター）。.c-tint で使う
+       写真の彩度・明るさを整えてから、色を2枚重ねる：
+         1枚目 overlay  … 写真の陰影を残したまま色を付ける（暗い部分は暗く、明るい部分は明るいまま）
+         2枚目 multiply … 全体にかぶせる色（白い部分もこの色になる）
+       ※ 今の値は仮のティラミス色（ベージュ・ココア）。
+         3年前の黄色の見た目は overlay #d3db56 / multiply #f0ce56 /
+         saturate 1.96 / brightness 1.11 / contrast 0.97 で再現できる */
+    --photo-tint-overlay: #a38672;
+    --photo-tint-multiply: #cbbeb3;
+    --photo-tint-saturate: 0;      /* 1 = 写真のまま、0 = 白黒 */
+    --photo-tint-brightness: 1.2;  /* 1 = 写真のまま */
+    --photo-tint-contrast: 0.75;   /* 1 = 写真のまま */
+
+    /* PRICE の背景（図形と水玉模様）
+       ※ 今の値は仮のティラミス色。3年前の黄色は
+         base #ffffff / dots #fff000 / shape-main #fef200 / shape-sub #ffd801 */
+    --price-base: var(--color-light); /* 地の色・白い三角 */
+    --price-dots: #b8a28e;            /* 水玉の色（濃淡は型の画像で付く） */
+    --price-shape-main: #b8a28e;      /* 大きい図形の色 */
+    --price-shape-sub: #b8a28e;       /* もう1つの図形の色 */
+
     /* 行き先がまだない（準備中）の項目：押せるボタンと見分けるため、塗りつぶさず枠線だけ */
     --color-unavailable-text: var(--color-dark);    /* 文字 */
     --color-unavailable-border: var(--color-dark);  /* 枠線 */

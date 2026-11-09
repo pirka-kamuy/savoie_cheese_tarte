@@ -130,10 +130,13 @@
                 </picture>
               </div>
               <div class="p-main__imgYellowBox _lordSlideImgUp">
-                <picture>
-                  <source media="(width < 768px)" srcset="images/sp/main01_overlay-750w.webp 750w, images/sp/main01_overlay.webp 1086w" sizes="100vw" width="1086" height="2532">
-                  <img class="p-main__imgYellow1" src="images/pc/main01_overlay.webp" width="889" height="667" alt="">
-                </picture>
+                <!-- 色面：元の写真（上と同じ画像）に CSS で色を重ねる（.c-tint） -->
+                <span class="c-tint p-main__imgYellow1">
+                  <picture>
+                    <source media="(width < 768px)" srcset="images/sp/main01-750w.webp 750w, images/sp/main01.webp 1086w" sizes="100vw" width="1086" height="2532">
+                    <img class="c-tint__photo" src="images/pc/main01.webp" width="889" height="667" alt="">
+                  </picture>
+                </span>
               </div>
             </div>
             <div id="savoia">
@@ -144,10 +147,12 @@
                 </picture>
               </div>
               <div class="p-main__imgBox2 _lordSlideImgUpSec">
-                <picture>
-                  <source media="(width < 768px)" srcset="images/sp/main02_overlay-750w.webp 750w, images/sp/main02_overlay.webp 1170w" sizes="100vw" width="1170" height="2340">
-                  <img class="p-main__imgYellow2" src="images/pc/main02_overlay.webp" width="1920" height="1560" alt="">
-                </picture>
+                <span class="c-tint p-main__imgYellow2">
+                  <picture>
+                    <source media="(width < 768px)" srcset="images/sp/main02-750w.webp 750w, images/sp/main02.webp 1170w" sizes="100vw" width="1170" height="2340">
+                    <img class="c-tint__photo" src="images/pc/main02.webp" width="1920" height="1560" alt="">
+                  </picture>
+                </span>
               </div>
             </div>
           </div>
@@ -245,11 +250,23 @@
       <section class="p-price" id="price">
         <div class="p-price__container">
           <!-- 斜めの背景は SVG ではなく CSS の clip-path で切り抜き -->
-          <div class="p-price__bg">
-            <picture>
-              <source media="(width < 768px)" srcset="images/sp/price_bg.webp" width="750" height="2458">
-              <img src="images/pc/price_bg.webp" width="1920" height="2173" alt="" loading="lazy">
-            </picture>
+          <!-- 背景の図形と水玉は装飾。色は foundation.css の --price-* で変えられる -->
+          <div class="p-price__bg" aria-hidden="true">
+            <div class="p-price__art">
+              <div class="p-price__dots"></div>
+              <svg class="p-price__shapes p-price__shapes--pc" viewBox="0 0 1920 2173" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <polygon class="p-price__shape p-price__shape--base" points="631,839 966,1984 1328,1240"/>
+                <polygon class="p-price__shape p-price__shape--sub" points="23,488 1627,623 1328,1240"/>
+                <polygon class="p-price__shape p-price__shape--main" points="632,839 967,1984 -100,2456 -100,1971"/>
+                <polygon class="p-price__shape p-price__shape--main" points="2000,-147 967,1984 2000,1526"/>
+              </svg>
+              <svg class="p-price__shapes p-price__shapes--sp" viewBox="0 0 750 2458" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <polygon class="p-price__shape p-price__shape--base" points="491,1028 7,1783 728,1382"/>
+                <polygon class="p-price__shape p-price__shape--main" points="-3,296 820,531 820,1520"/>
+                <polygon class="p-price__shape p-price__shape--sub" points="-3,1789 820,1331 820,2058"/>
+                <polygon class="p-price__shape p-price__shape--main" points="-50,1753 820,2515 -50,2600"/>
+              </svg>
+            </div>
           </div>
           <div class="p-price__inner">
             <h2 class="p-price__title">PRICE</h2>
@@ -486,10 +503,12 @@
           </div>
           <!-- clip-path で隠してから見せる画像は lazy にしない（隠れている間は読み込みが始まらず、表示が遅れるため） -->
           <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
-            <picture>
-              <source media="(width < 768px)" srcset="images/sp/shop_overlay.webp" width="542" height="664">
-              <img class="p-shop__yellowImg" src="images/pc/shop_overlay.webp" width="1920" height="1173" alt="">
-            </picture>
+            <span class="c-tint p-shop__yellowImg">
+              <picture>
+                <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
+                <img class="c-tint__photo" src="images/pc/shop.webp" width="1920" height="1173" alt="">
+              </picture>
+            </span>
           </div>
         </div>
         <div class="p-shop__title">
@@ -609,7 +628,7 @@
       </svg>
       <div class="l-footer__inner">
         <div class="l-footer__innerBox">
-          <div class="l-footer__backGround"></div>
+          <div class="l-footer__backGround c-tint"><span class="l-footer__photo c-tint__photo"></span></div>
           <div class="l-footer__main">
             <div class="l-footer__mainBox">
               <div class="l-footer__logoImg">

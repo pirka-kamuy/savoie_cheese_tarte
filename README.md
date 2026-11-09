@@ -19,7 +19,7 @@ js/
 images/           … WebP（pc/ sp/ はファーストビュー等の出し分け用）
 ```
 
-ビルドは不要です。`index.html` をブラウザで開けば動きます。
+ビルドは不要です。`index.html` をブラウザで開けば動きます（PRICE の水玉模様だけはサーバー経由で表示。下の「色面・背景の色」を参照）。
 
 ## コーディング方針
 
@@ -52,6 +52,21 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
 
 - WebP。`<picture>` + `media` で PC / SP の画像を出し分け、不要な方はダウンロードされません。
 - `width` / `height` 属性を必ず書く（表示崩れ＝CLS 防止）。ファーストビュー以外は `loading="lazy"`。
+
+### 色面・背景の色（CSS で色を付けている）
+
+**写真の色面と PRICE の背景は CSS で色を付けている。写真を差し替えるときは元の写真だけ、色を変えるときは `foundation.css` の変数だけ変えればいい。**
+
+- 写真の色面（TOP の2枚・SHOPS・フッター）：色付きの別画像は使わず、元の写真と同じ画像に色を重ねる（`.c-tint`）。
+  写真の彩度・明るさを `filter` で整え、色を2枚（`overlay` → `multiply`）重ねている。
+  同じ画像を使うので、追加のダウンロードは発生しない。
+  色は `--photo-tint-overlay` / `--photo-tint-multiply` / `--photo-tint-saturate` / `--photo-tint-brightness` / `--photo-tint-contrast`。
+- PRICE の背景：
+  - 塗りつぶしの図形は HTML 内の SVG（色は `--price-shape-main` / `--price-shape-sub` / `--price-base`）
+  - 水玉模様は形だけの白黒画像（`images/pc/price_dots.webp` / `images/sp/price_dots.webp`、白＝濃い水玉）を `mask-image` で型抜きし、色は `--price-dots`
+- 3年前の黄色の見た目を再現する値は、`foundation.css` のコメントに残してある。
+- 注意：`mask-image` の画像はブラウザのセキュリティの仕様で、`index.html` をファイルとして直接開いた場合（`file://`）は読み込まれず、水玉模様だけ表示されない。
+  GitHub Pages などのサーバー経由、またはローカルで `python3 -m http.server` などを使えば表示される。
 
 ## 今後の TODO
 

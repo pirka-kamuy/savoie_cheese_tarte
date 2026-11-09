@@ -77,10 +77,13 @@
     bottom: 0;
     left: 0;
   }
+  /* フッターの背景：TOP の1枚目と同じ元の写真に、.c-tint で色を重ねる */
   .l-footer__backGround {
-    background-image: url("../images/pc/footer_bg.webp");
     width: 100%;
     height: 100%;
+  }
+  .l-footer__photo {
+    background-image: url("../images/pc/main01.webp");
     background-attachment: fixed;
     background-position: center bottom;
     background-size: 100% auto;
@@ -169,8 +172,9 @@
   }
   
   @media (width < 768px) {
-    .l-footer__backGround {
-      background-image: url("../images/sp/footer_bg.webp");
+    .l-footer__photo {
+      background-size: 125% auto; /* スマホは元の写真の中央 80% を使う（3年前の版と同じ切り取り方） */
+      background-position: 55% bottom;
     }
     .l-footer__mainBox {
       padding: 0 6vw;

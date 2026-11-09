@@ -1691,21 +1691,93 @@
     cursor: pointer;
   }
   
-  /* --- PRICE の斜め背景（SVG の clipPath → CSS の clip-path） --- */
-  .p-price__bg img {
+  /* --- Component: 写真に色を重ねる（色付きの別画像を用意しない） ---
+     <span class="c-tint"><img class="c-tint__photo"></span> のように使う。
+     写真の彩度・明るさを filter で整え、その上に色を2枚（overlay → multiply）重ねる。
+     色は foundation.css の --photo-tint-* で変える */
+  .c-tint {
+    position: relative;
+    display: block;
+    isolation: isolate; /* 重ねた色が、この部品の外（下の写真など）と混ざらないように */
+  }
+  .c-tint__photo {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(var(--photo-tint-saturate)) brightness(var(--photo-tint-brightness)) contrast(var(--photo-tint-contrast));
+  }
+  .c-tint::before,
+  .c-tint::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* filter の付いた写真より上に重ねる */
+    content: "";
+    pointer-events: none;
+  }
+  .c-tint::before {
+    background-color: var(--photo-tint-overlay);
+    mix-blend-mode: overlay;
+  }
+  .c-tint::after {
+    background-color: var(--photo-tint-multiply);
+    mix-blend-mode: multiply;
+  }
+
+  /* --- PRICE の背景：塗りつぶしの図形（SVG）＋ 水玉模様（型抜き）。画像の色に頼らず、色は --price-* --- */
+  .p-price__art {
+    position: relative;
+    aspect-ratio: 1920 / 2173;
+    background-color: var(--price-base);
     clip-path: polygon(100% 100%, 0 83.436%, 0 22.086%, 100% 0);
   }
-  
+  /* 水玉：形だけの白黒画像（白＝濃い水玉）で型抜きし、色は background-color で付ける */
+  .p-price__dots {
+    position: absolute;
+    inset: 0;
+    background-color: var(--price-dots);
+    mask-image: url("../images/pc/price_dots.webp");
+    mask-mode: luminance;
+    mask-size: cover;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+  .p-price__shapes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .p-price__shapes--sp {
+    display: none;
+  }
+  .p-price__shape--base {
+    fill: var(--price-base);
+  }
+  .p-price__shape--main {
+    fill: var(--price-shape-main);
+  }
+  .p-price__shape--sub {
+    fill: var(--price-shape-sub);
+  }
+
   @media (width < 768px) {
-    .p-price__bg img {
+    .p-price__art {
+      aspect-ratio: 750 / 2458;
       clip-path: polygon(0 11.147%, 100% 0, 100% 100%, 0 95.403%);
+    }
+    .p-price__dots {
+      mask-image: url("../images/sp/price_dots.webp");
+    }
+    .p-price__shapes--pc {
+      display: none;
+    }
+    .p-price__shapes--sp {
+      display: block;
     }
   }
   
-  /* 黄色の重ね画像（loading="lazy"）：幅を明示しないと読み込み前に幅0になり、いつまでも読み込まれない */
+  /* 色面の重ね画像：幅を明示しないと読み込み前に幅0になる */
   .p-shop__imgBox2 {
     width: 100%;
   }
@@ -1831,9 +1903,9 @@
       min-height: calc(91.194444vw * var(--content-scale));
     }
 
-    .p-price__bg img {
-      height: calc(113.17vw * var(--content-scale)); /* 背景画像の縦横比 2173/1920 */
-      object-fit: cover;
+    .p-price__art {
+      aspect-ratio: auto;
+      height: calc(113.17vw * var(--content-scale)); /* 元の背景の縦横比 2173/1920。図形と水玉は中央を基準に切り取る（cover） */
     }
 
     /* 縮小したブロック内でも本文は小さくしない：倍率で割り戻して、表示サイズを保つ（最低 13px） */
