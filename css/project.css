@@ -1292,6 +1292,32 @@
   .itemLeft1 {
     margin-left: auto;
   }
+  /* 各項目の説明文：写真のすぐ下に、写真と同じ幅・同じ寄せ方で置く（どの項目の説明か一目でわかるように）。
+     HTML では見出し（h4）の直後に置き、表示の順番だけ写真を先にする */
+  .p-passion__item1, .p-passion__item2, .p-passion__item3, .p-passion__item4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .p-passion__itemMain, .p-passion__itemMain2 {
+    order: -1;
+  }
+  .p-passion__itemText {
+    width: 43.75vw;
+    max-width: 720px;
+    margin-top: 1em;
+    color: var(--color-dark);
+    font-size: 0.875rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  li:has(> .itemLeft1) > .p-passion__itemText {
+    margin-left: auto;
+  }
+  /* 見出しの帯が写真の下側にはみ出して置かれている項目は、その分あけてから説明文を始める */
+  .p-passion__item2 > .p-passion__itemText,
+  .p-passion__item3 > .p-passion__itemText {
+    margin-top: 3.2em;
+  }
   
   .p-passion__comment {
     transform: translateY(-20%);
@@ -1386,6 +1412,16 @@
       margin-left: 0;
     }
     .itemLeft2 {
+      margin-left: 10vw;
+    }
+    .p-passion__itemText {
+      width: 71vw;
+      margin-top: 0.8em;
+    }
+    li:has(> .itemLeft1) > .p-passion__itemText {
+      margin-left: 0;
+    }
+    li:has(> .itemLeft2) > .p-passion__itemText {
       margin-left: 10vw;
     }
   }
@@ -2007,6 +2043,10 @@
 
     .p-price__name .p-price__slide {
       font-size: max(calc(0.8125rem / var(--content-scale)), clamp(1rem, 1.2vw, 1.0625rem));
+    }
+
+    .p-passion__itemText {
+      font-size: calc(0.875rem / var(--content-scale)); /* 表示 14px */
     }
 
     .p-passion__textBox p,

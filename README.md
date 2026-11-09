@@ -78,8 +78,9 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
   - 海外サイトのリンク、NEWS PAGE ボタン、SNS アイコンは削除済み
   - FAQ はページ内（CONTACT - FAQ セクションの `#faq`、`<details>` / `<summary>` で開閉、JavaScript なし）に作成済み。
     これで `href="#"` はなくなった
-- 文章のティラミス版への差し替え：「記憶に残る、ひとくち」（p-memory）と HOW TO EAT（p-eat）は差し替え済み。
-  残り：ESSENCE（CHEESE / TART）、PHILOSOPHY / DESIGN、NEWS、写真の説明（alt）、会社情報などのチーズタルトの記述
+- 文章のティラミス版への差し替え：「記憶に残る、ひとくち」（p-memory）、HOW TO EAT（p-eat）、
+  PHILOSOPHY / DESIGN（p-passion。各項目に説明文 `.p-passion__itemText` を追加）は差し替え済み。
+  残り：ESSENCE（CHEESE / TART）、NEWS、写真の説明（alt）、会社情報などのチーズタルトの記述
 - 写真・ロゴ・HOW TO EAT のアイコン画像をティラミスの素材に差し替え（画像はまとめて差し替える予定）
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
 - NEWS の内容が 2022 年のままなので更新
