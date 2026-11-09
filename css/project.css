@@ -1609,6 +1609,82 @@
     top: 2.5em;
     right: 2em;
   }
+  /* --- FAQ（CONTACT の中）：<details> / <summary> で開閉 --- */
+  .p-faq {
+    width: 57%;
+    margin: 5.75em auto 0;
+    scroll-margin-top: 2rem; /* ページ内リンクで飛んだとき、見出しが画面の端にくっつかないように */
+  }
+  .p-faq__title {
+    margin-bottom: 1em;
+    text-align: center;
+    letter-spacing: 0.08em;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-family: var(--font-en);
+    color: var(--color-dark);
+  }
+  .p-faq__list {
+    border-top: 1px solid var(--color-main);
+  }
+  .p-faq__item {
+    border-bottom: 1px solid var(--color-main);
+  }
+  .p-faq__question {
+    position: relative;
+    display: block;
+    padding: 1.1em 3em 1.1em 0.5em;
+    list-style: none; /* ブラウザ標準の ▶ を消し、下の ＋ / − に置き換える */
+    color: var(--color-dark);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .p-faq__question::-webkit-details-marker {
+    display: none;
+  }
+  .p-faq__question:hover {
+    background-color: var(--color-light);
+  }
+  /* 開閉の印：横線（−）＋ 縦線。閉じているときは ＋、開くと縦線が回って − になる */
+  .p-faq__question::before,
+  .p-faq__question::after {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 0.9em;
+    height: 2px;
+    margin-top: -1px;
+    background-color: var(--color-main);
+    content: "";
+    transition: transform 0.3s;
+  }
+  .p-faq__question::after {
+    transform: rotate(90deg);
+  }
+  .p-faq__item[open] > .p-faq__question::after {
+    transform: rotate(0deg);
+  }
+  .p-faq__answer {
+    padding: 0 3em 1.4em 0.5em;
+    color: var(--color-dark);
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+  .p-faq__answer a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  /* 動きを減らす設定では、印の回転をしない */
+  @media (prefers-reduced-motion: reduce) {
+    .p-faq__question,
+    .p-faq__question::before,
+    .p-faq__question::after {
+      transition: none;
+    }
+  }
+
   .p-contact__table {
     width: 57%;
     margin: 0 auto;
@@ -1651,6 +1727,10 @@
     .p-contact__list li a {
       padding: 6.66667vw 6vw;
       font-size: 0.75rem;
+    }
+    .p-faq {
+      width: 100%;
+      margin-top: 16vw;
     }
     .p-contact__table {
       width: 100%;

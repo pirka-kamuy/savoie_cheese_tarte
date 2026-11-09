@@ -76,7 +76,8 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
   - お問い合わせ：`mailto:tiramisu@savoia.co.jp`（件名を `subject` で指定）
   - オンラインショップ・英語版（ENGLISH）：`href` のない `<a>` に「（準備中）」を添えて表示のみ（指カーソル・ホバー演出なし）
   - 海外サイトのリンク、NEWS PAGE ボタン、SNS アイコンは削除済み
-- ページ内に FAQ セクションを作り、CONTACT の「FAQ - よくあるご質問」のリンク先にする（現在この1か所だけ `href="#"` が残っている）
+  - FAQ はページ内（CONTACT - FAQ セクションの `#faq`、`<details>` / `<summary>` で開閉、JavaScript なし）に作成済み。
+    これで `href="#"` はなくなった
 - 写真・本文・ロゴ・HOW TO EAT をティラミスの素材に差し替え
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
 - NEWS の内容が 2022 年のままなので更新
