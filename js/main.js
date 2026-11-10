@@ -30,8 +30,8 @@
     { selector: '._scrollPrice', className: 'js-price2' },
     { selector: '._scrollSlideYellow', className: 'js-passionTitle' },
     { selector: '._scrollSlideLeftYellow', className: 'js-passion', delay: 300 },
-    { selector: '._scrollSlideUpYellow', className: 'js-material', delay: 800 },
-    { selector: '._scrollYellow', className: 'js-material2', delay: 800 },
+    { selector: '._scrollBandUp', className: 'js-material', delay: 800 }, // ESSENCE（レイアウト a）の見出しの帯
+    { selector: '._scrollBandUpSec', className: 'js-material2', delay: 800 }, // ESSENCE（レイアウト b）の見出しの帯
 
     // 画像の clip-path 表示
     { selector: '._scrollSlideImgUp', className: 'is-active' },

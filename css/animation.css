@@ -193,18 +193,7 @@
     animation-fill-mode: forwards;
   }
   
-  @media (width < 768px) {
-    .js-material {
-      width: 3vw;
-      height: 49vw;
-      padding: 0 8.8vw;
-    }
-    .js-material2 {
-      width: 11vw;
-      height: 29vw;
-      padding: 5.3vw 3.8vw;
-    }
-  }
+  /* スマホでも見出しの箱いっぱいに帯を出す（以前は見出しの高さに合わせた固定値だった） */
   @keyframes js-materialBack {
     0% {
       transform-origin: bottom;
@@ -444,7 +433,7 @@
   }
   
   /* 背景の帯を出すための空要素（div → span に変えたので block に戻す。詳細度0） */
-  :where(._scrollSlideUpYellow, ._scrollYellow, ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollSlideLeft, ._scrollPrice) {
+  :where(._scrollBandUp, ._scrollBandUpSec, ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollSlideLeft, ._scrollPrice) {
     display: block;
   }
   
@@ -485,7 +474,7 @@
       padding: 6.3vw 30.8vw;
     }
   
-    ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollSlideUpYellow, ._scrollYellow {
+    ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollBandUp, ._scrollBandUpSec {
       position: absolute;
       top: 0;
       left: 0;

@@ -82,7 +82,9 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
   PHILOSOPHY / DESIGN（p-passion。各項目に説明文 `.p-passion__itemText` を追加）は差し替え済み。
   ACCESS（旧 SHOPS。`#access`、お店の情報を追加）と NEWS（4件）も差し替え済み。
   CONTACT の会社情報（1店舗のお店の内容、5項目）も差し替え済み。
-  残り：ESSENCE（CHEESE / TART）、写真の説明（alt）
+  ESSENCE（`#essence`）もティラミスの3素材（ESPRESSO / MASCARPONE / SAVOIARDI）に組み替え済み。
+  2種類のレイアウトを `p-material__item--a` / `--b` で交互に使う（a → b → a）。
+  残り：写真の差し替えと写真の説明（alt）。ESSENCE の3つ目（SAVOIARDI）の写真は仮
 - 写真・ロゴ・HOW TO EAT のアイコン画像をティラミスの素材に差し替え（画像はまとめて差し替える予定）
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
 
