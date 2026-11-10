@@ -73,7 +73,7 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
 **トップページのみの制作。行き先のないリンクは作らず、mailto: とページ内のFAQで代替**
 
 - リンクの方針：押せる見た目にするなら本当の行き先を用意する。行き先がないなら押せる見た目もやめる。`href="#"` は使わない
-  - お問い合わせ：`mailto:tiramisu@savoia.co.jp`（件名を `subject` で指定）
+  - お問い合わせ：`mailto:info@example.com`（件名を `subject` で指定）。メールアドレスは例示用に予約された `example.com` を使用（実在のドメインを避けるため）
   - オンラインショップ・英語版（ENGLISH）：`href` のない `<a>` に「（準備中）」を添えて表示のみ（指カーソル・ホバー演出なし）
   - 海外サイトのリンク、NEWS PAGE ボタン、SNS アイコンは削除済み
   - FAQ はページ内（CONTACT - FAQ セクションの `#faq`、`<details>` / `<summary>` で開閉、JavaScript なし）に作成済み。
@@ -81,7 +81,8 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
 - 文章のティラミス版への差し替え：「記憶に残る、ひとくち」（p-memory）、HOW TO EAT（p-eat）、
   PHILOSOPHY / DESIGN（p-passion。各項目に説明文 `.p-passion__itemText` を追加）は差し替え済み。
   ACCESS（旧 SHOPS。`#access`、お店の情報を追加）と NEWS（4件）も差し替え済み。
-  残り：ESSENCE（CHEESE / TART）、写真の説明（alt）、会社情報などのチーズタルトの記述
+  CONTACT の会社情報（1店舗のお店の内容、5項目）も差し替え済み。
+  残り：ESSENCE（CHEESE / TART）、写真の説明（alt）
 - 写真・ロゴ・HOW TO EAT のアイコン画像をティラミスの素材に差し替え（画像はまとめて差し替える予定）
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
 
