@@ -19,17 +19,17 @@
     // テキストのスライドイン
     { selector: '._scrollBothSlideUp', className: '_isActiveBothSlideUp' },
     { selector: '._scrollBothSlideDown, ._scrollBothSlideDownSec, ._scrollBothSlideDownThr', className: '_isActiveBothSlideDown' },
-    { selector: '._scrollSlideSaku', className: 'js-timeLag', delay: 500 },
-    { selector: '._scrollSlideFuwa', className: 'js-timeLag', delay: 800 },
+    { selector: '._scrollSlideSound1', className: 'js-timeLag', delay: 500 },
+    { selector: '._scrollSlideSound2', className: 'js-timeLag', delay: 800 },
     { selector: '._scrollSlide', className: 'js-timeLag', delay: 1100 },
     { selector: '._scrollBothListUp', className: 'js-timeLag', stagger: 50 },
     { selector: '._scrollStepUp', className: '_isActiveStepUp', stagger: 250 }, // HOW TO EAT：0.25秒ずつ順番に
 
-    // 背景色の帯（黒・黄色）
+    // 背景色の帯（PRICE の黒い帯、見出しの色の帯）
     { selector: '._scrollSlideLeft', className: 'js-price' },
     { selector: '._scrollPrice', className: 'js-price2' },
-    { selector: '._scrollSlideYellow', className: 'js-passionTitle' },
-    { selector: '._scrollSlideLeftYellow', className: 'js-passion', delay: 300 },
+    { selector: '._scrollBandLeft', className: 'js-passionTitle' },
+    { selector: '._scrollBandLeftSec', className: 'js-passion', delay: 300 },
     { selector: '._scrollBandUp', className: 'js-material', delay: 800 }, // ESSENCE（レイアウト a）の見出しの帯
     { selector: '._scrollBandUpSec', className: 'js-material2', delay: 800 }, // ESSENCE（レイアウト b）の見出しの帯
 

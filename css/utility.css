@@ -27,6 +27,11 @@
     }
   }
 
+  /* 途中で改行させない（郵便番号・番地など） */
+  .u-nowrap {
+    white-space: nowrap;
+  }
+
   /* 画面には表示しないが、スクリーンリーダーには読み上げさせる */
   .u-visuallyHidden {
     position: absolute;

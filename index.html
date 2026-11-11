@@ -129,9 +129,9 @@
                   <img class="p-main__img1" src="images/pc/main01.webp" width="889" height="667" alt="積み重ねた焼きたてのチーズタルト" fetchpriority="high">
                 </picture>
               </div>
-              <div class="p-main__imgYellowBox _lordSlideImgUp">
+              <div class="p-main__tintBox _lordSlideImgUp">
                 <!-- 色面：元の写真（上と同じ画像）に CSS で色を重ねる（.c-tint） -->
-                <span class="c-tint p-main__imgYellow1">
+                <span class="c-tint p-main__tint1">
                   <picture>
                     <source media="(width < 768px)" srcset="images/sp/main01-750w.webp 750w, images/sp/main01.webp 1086w" sizes="100vw" width="1086" height="2532">
                     <img class="c-tint__photo" src="images/pc/main01.webp" width="889" height="667" alt="">
@@ -147,7 +147,7 @@
                 </picture>
               </div>
               <div class="p-main__imgBox2 _lordSlideImgUpSec">
-                <span class="c-tint p-main__imgYellow2">
+                <span class="c-tint p-main__tint2">
                   <picture>
                     <source media="(width < 768px)" srcset="images/sp/main02-750w.webp 750w, images/sp/main02.webp 1170w" sizes="100vw" width="1170" height="2340">
                     <img class="c-tint__photo" src="images/pc/main02.webp" width="1920" height="1560" alt="">
@@ -165,8 +165,8 @@
                 <div class="p-memory__container">
                   <h2 class="p-memory__h2 _scrollBothSlideUp">記憶に残る、ひとくち</h2>
                   <p class="p-memory__sound">
-                    <span class="p-memory__saku _scrollSlideSaku">ほろ苦く、</span>
-                    <span class="p-memory__fuwa _scrollSlideFuwa">とろける。</span>
+                    <span class="p-memory__sound1 _scrollSlideSound1">ほろ苦く、</span>
+                    <span class="p-memory__sound2 _scrollSlideSound2">とろける。</span>
                   </p>
                   <div class="p-memory__body _scrollSlide">
                     <p>
@@ -366,7 +366,7 @@
                 <div class="p-eat__stepBox">
                   <span lang="en">CHILLED</span>
                   <h3>まずはそのままで</h3>
-                  <img class="p-eat__imgTarte" src="images/icon_fresh.webp" width="400" height="400" alt="" loading="lazy">
+                  <img class="p-eat__imgFirst" src="images/icon_fresh.webp" width="400" height="400" alt="" loading="lazy">
                   <p>冷蔵庫でしっかり冷やして、エスプレッソのほろ苦さとマスカルポーネのなめらかさをお楽しみください。</p>
                 </div>
               </li>
@@ -412,12 +412,12 @@
             <h2 class="p-passion__title">
               <span class="p-passion__text1 js-slideLeft">
                 <span class="p-passion__text _scrollBothListUp">私たちは</span>
-                <span class="_scrollSlideYellow" aria-hidden="true"></span>
+                <span class="_scrollBandLeft" aria-hidden="true"></span>
               </span>
               <i class="p-passion__br"></i>
               <span class="p-passion__text1 p-passion__text2 js-slideLeft">
                 <span class="p-passion__text _scrollBothListUp">ティラミスに<wbr>本気です。</span>
-                <span class="_scrollSlideYellow" aria-hidden="true"></span>
+                <span class="_scrollBandLeft" aria-hidden="true"></span>
               </span>
             </h2>
           </header>
@@ -442,7 +442,7 @@
                 <h4>
                   <span class="p-passion__itemTitle1 u-textDown u-textLeft">
                     <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">豆から選ぶ</span>
-                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                    <span class="_scrollBandLeftSec" aria-hidden="true"></span>
                   </span>
                 </h4>
                 <p class="p-passion__itemText _scrollBothSlideUp">ティラミスの味を決めるのは、エスプレッソ。香りと苦みのバランスを考えて選んだ豆を、仕込みのたびに淹れて使っています。</p>
@@ -454,7 +454,7 @@
                 <h4>
                   <span class="p-passion__itemTitle2 u-textDown u-textLeft">
                     <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">口どけを極める</span>
-                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                    <span class="_scrollBandLeftSec" aria-hidden="true"></span>
                   </span>
                 </h4>
                 <p class="p-passion__itemText _scrollBothSlideUp">ティラミスのなめらかさは、マスカルポーネで決まります。ミルクのコクと口どけを大切に、素材を選んでいます。</p>
@@ -466,7 +466,7 @@
                 <h4>
                   <span class="p-passion__itemTitle3 u-textDown u-textLeft">
                     <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">その日の分だけ</span>
-                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                    <span class="_scrollBandLeftSec" aria-hidden="true"></span>
                   </span>
                 </h4>
                 <p class="p-passion__itemText _scrollBothSlideUp">店頭では、その日に販売する分だけをご用意しています。なくなり次第終了なのは、いちばんおいしい状態で届けたいからです。</p>
@@ -477,7 +477,7 @@
             </ul>
           </div>
           <div class="p-passion__box">
-            <div class="p-passion__textBox textBox2">
+            <div class="p-passion__textBox">
               <div class="p-passion__design">
                 <h3>
                   <span class="u-visuallyHidden">Design</span>
@@ -496,7 +496,7 @@
                 <h4>
                   <span class="p-passion__itemTitle2 u-textDown u-textLeft">
                     <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">SAVOIAという名前に込めた想い</span>
-                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                    <span class="_scrollBandLeftSec" aria-hidden="true"></span>
                   </span>
                 </h4>
                 <p class="p-passion__itemText _scrollBothSlideUp">ティラミスに欠かせないビスケット、サヴォイアルディ。その名前は「サヴォイアの」という意味です。伝統への敬意を込めて、店名にしました。</p>
@@ -508,7 +508,7 @@
                 <h4>
                   <span class="p-passion__itemTitle3 u-textDown u-textLeft">
                     <span class="p-passion__itemTitle u-textDown__inner u-textLeftAnime">四角いガラスカップを選んだ理由</span>
-                    <span class="_scrollSlideLeftYellow" aria-hidden="true"></span>
+                    <span class="_scrollBandLeftSec" aria-hidden="true"></span>
                   </span>
                 </h4>
                 <p class="p-passion__itemText _scrollBothSlideUp">本場のティラミスは、四角いトレーでつくります。その形を1人分にしたのが、このカップ。重なった層もきれいに見えます。</p>
@@ -539,7 +539,7 @@
             </div>
             <!-- clip-path で隠してから見せる画像は lazy にしない（隠れている間は読み込みが始まらず、表示が遅れるため） -->
             <div class="p-shop__imgBox2 _scrollSlideImgLeftSec">
-              <span class="c-tint p-shop__yellowImg">
+              <span class="c-tint p-shop__tint">
                 <picture>
                   <source media="(width < 768px)" srcset="images/sp/shop.webp" width="542" height="664">
                   <img class="c-tint__photo" src="images/pc/shop.webp" width="1920" height="1173" alt="">
@@ -563,7 +563,7 @@
             <dt>店名</dt>
             <dd>SAVOIA TIRAMISÙ</dd>
             <dt>住所</dt>
-            <dd>〒000-0000 東京都〇〇区〇〇 1-2-3</dd>
+            <dd><span class="u-nowrap">〒000-0000</span> 東京都〇〇区〇〇 <span class="u-nowrap">1-2-3</span></dd>
             <dt>アクセス</dt>
             <dd>〇〇駅から徒歩5分</dd>
             <dt>営業時間</dt>
@@ -679,7 +679,7 @@
               <dt>名称</dt>
               <dd>株式会社SAVOIA</dd>
               <dt>所在地</dt>
-              <dd>〒000-0000 東京都〇〇区〇〇 1-2-3</dd>
+              <dd><span class="u-nowrap">〒000-0000</span> 東京都〇〇区〇〇 <span class="u-nowrap">1-2-3</span></dd>
               <dt>メールアドレス</dt>
               <dd><a href="mailto:info@example.com">info@example.com</a></dd>
               <dt>設立</dt>

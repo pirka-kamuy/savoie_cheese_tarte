@@ -86,6 +86,9 @@ images/           … WebP（pc/ sp/ はファーストビュー等の出し分�
   2種類のレイアウトを `p-material__item--a` / `--b` で交互に使う（a → b → a）。
   残り：写真の差し替えと写真の説明（alt）。ESSENCE の3つ目（SAVOIARDI）の写真は仮
 - 写真・ロゴ・HOW TO EAT のアイコン画像をティラミスの素材に差し替え（画像はまとめて差し替える予定）
+  - 画像を差し替える前のコードの仕上げは完了：チーズタルト時代・黄色時代の名前が入ったクラス名は整理済み
+    （例：`p-main__tint1`、`p-shop__tint`、`_scrollBandLeft`、`p-memory__sound1`）。
+    画像のファイル名（`cream_cheese.webp`、`tart_base.webp`、`icon_fresh.webp` など）は差し替えのときに変更する
 - 公開時：サーバー側でキャッシュ（`Cache-Control`）設定と、CSS/JS の圧縮（minify）
 
 ## 改修履歴

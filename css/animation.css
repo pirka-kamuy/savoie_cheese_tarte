@@ -12,8 +12,8 @@
     transform: translateY(50%);
   }
   
-  ._scrollSlideSaku,
-  ._scrollSlideFuwa {
+  ._scrollSlideSound1,
+  ._scrollSlideSound2 {
     opacity: 0;
     transition: 1.2s;
     transform: translate(0, 2rem);
@@ -127,13 +127,13 @@
     height: 100%;
     background-color: var(--color-main);
     content: "";
-    animation-name: js-passionBackYellow;
+    animation-name: js-passionBand;
     animation-fill-mode: forwards;
     animation-duration: 0.8s;
     opacity: 0;
   }
   
-  @keyframes js-passionBackYellow {
+  @keyframes js-passionBand {
     from {
       transform: translateX(-30%);
       opacity: 0;
@@ -233,7 +233,7 @@
     clip-path: inset(0 -20% 0 0);
   }
   
-  /* SHOPS の黄色い重ね画像：スマホでは右から左に表示（PC は左から右） */
+  /* ACCESS の色面：スマホでは右から左に表示（PC は左から右） */
   @media (width < 768px) {
     .p-shop__imgBox2._scrollSlideImgLeftSec {
       clip-path: inset(0 -20% 0 100%);
@@ -433,13 +433,13 @@
   }
   
   /* 背景の帯を出すための空要素（div → span に変えたので block に戻す。詳細度0） */
-  :where(._scrollBandUp, ._scrollBandUpSec, ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollSlideLeft, ._scrollPrice) {
+  :where(._scrollBandUp, ._scrollBandUpSec, ._scrollBandLeft, ._scrollBandLeftSec, ._scrollSlideLeft, ._scrollPrice) {
     display: block;
   }
   
   /* JavaScript が無効・読み込み失敗の環境でも、内容が隠れたままにならないようにする */
   @media (scripting: none) {
-    ._scrollBothSlideUp, ._scrollSlide, ._scrollSlideSaku, ._scrollSlideFuwa,
+    ._scrollBothSlideUp, ._scrollSlide, ._scrollSlideSound1, ._scrollSlideSound2,
     ._scrollBothSlideDown, ._scrollBothSlideDownSec, ._scrollBothSlideDownThr,
     ._scrollBothListUp, ._scrollStepUp, .p-passion__itemTitle {
       opacity: 1;
@@ -474,7 +474,7 @@
       padding: 6.3vw 30.8vw;
     }
   
-    ._scrollSlideYellow, ._scrollSlideLeftYellow, ._scrollBandUp, ._scrollBandUpSec {
+    ._scrollBandLeft, ._scrollBandLeftSec, ._scrollBandUp, ._scrollBandUpSec {
       position: absolute;
       top: 0;
       left: 0;
